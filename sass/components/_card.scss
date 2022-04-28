@@ -1,0 +1,88 @@
+.card {
+    position: relative;
+    min-height: 20rem;
+    flex-basis: 30%;
+    margin: 2rem;
+
+    transition: all .4s ease-in-out;
+    border-radius: 2rem;
+    // overflow: hidden; // fix img overflow card
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .2);
+    background-color: $color-white;
+
+    text-align: center;
+    
+
+    &:hover {
+        transform: translateY(-.5rem);
+    }
+
+    &__img {
+        display: block;
+        width: 100%;
+        height: 20vw;
+        @include respond("phone") {
+            height: 50vw;
+        }
+        object-fit: cover;
+        &-box {
+            height: 100%;
+        }
+        border-top-left-radius: 2rem;
+        border-top-right-radius: 2rem;
+    }
+
+    &__heading {
+        font-size: 2.8rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        text-align: right;
+        color: $color-white;
+        position: absolute;
+        right: 2rem;
+        width: 75%;
+        
+        top: 20vw;
+        transform: translateY(-50%);
+        @include respond("phone") {
+            top: 50vw;
+        }
+    }
+
+    &__heading-span {
+        padding: 1rem 1.5rem;
+        -webkit-box-decoration-break: clone;
+        box-decoration-break: clone;
+        &--medical {
+            background-image: 
+                linear-gradient(to right bottom, 
+                rgba($color-tertiary-light, .85), 
+                rgba($color-tertiary-dark, .85)
+            );
+        }
+        &--wearable {
+            background-image: 
+                linear-gradient(to right bottom, 
+                rgba($color-primary-light, .85), 
+                rgba($color-primary-dark, .85)
+            );
+        }
+        &--education {
+            background-image: 
+                linear-gradient(to right bottom, 
+                rgba($color-secondary-light, .85), 
+                rgba($color-secondary-dark, .85)
+            );
+        }
+    }
+
+    &__details {
+        color: $color-primary-dark;
+        padding: 6rem 3rem 3rem 3rem;
+        @include respond("phone") {
+            padding: 4rem 2rem 2rem 2rem;
+        }
+
+
+    }
+}

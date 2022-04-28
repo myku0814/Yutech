@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900&family=Roboto:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+        
+        <title>Yutech | 裕晶醫學科技</title>
+    </head>
+    <body>
+
+        <div id="app" v-cloak>
+            <div class="navigation">
+                <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+                <label for="navi-toggle" class="navigation__button">
+                    <span class="navigation__icon">&nbsp;</span>
+                </label>
+                <div class="navigation__background">&nbsp;</div>
+                
+                <nav class="navigation__nav">
+                    <a href="/">
+                        <div class="navigation__logo-box">
+                            <img src="img/logo.jpg" alt="Logo" class="navigation__logo">
+                        </div>
+                    </a>
+    
+                    <ul class="navigation__list">
+                        <li class="navigation__item"><a href="#popup-yuguard" class="navigation__link">貼心片</a></li>
+                        <li class="navigation__item"><a href="#popup-yusound" class="navigation__link">貼心音</a></li>
+                        <li class="navigation__item"><a href="#popup-yurine" class="navigation__link">尿檢譯</a></li>
+                        <li class="navigation__item"><a href="#popup-yucloth" class="navigation__link">貼心衣</a></li>
+                        <li class="navigation__item"><a href="#popup-yubelt" class="navigation__link">貼心帶</a></li>
+                        <li class="navigation__item"><a href="#popup-yupet" class="navigation__link">寵心衣</a></li>
+                        <li class="navigation__item"><a href="#popup-trianswer" class="navigation__link">試穿戴</a></li>
+                    </ul>
+                </nav>
+            </div>
+    
+            <header class="header">
+                <!-- 品牌宣言 -->
+                
+                <div class="header__text-box">
+                    <h1 class="heading-primary">
+                        <span class="heading-primary--main">貼身守護神</span>
+                        <span class="heading-primary--sub">具心血管疾病檢測、分析與評估之穿戴式產品</span>
+                    </h1>
+                    <a href="#section-features" class="btn btn--blue">了解裕晶醫學科技</a>
+                </div>
+            </header>
+
+            <main>
+                <section id="section-about" class="section-about">
+                    <ul class="bubbles">
+                        <li v-for="index in 10" :key="index"></li>
+                    </ul>
+                    <!-- 7樣產品 -->
+                    <div class= "u-center-text u-margin-bottom-big">
+                        <h2 class="heading-secondary heading-secondary--light">生醫系統晶片.生醫穿戴式裝置.手機雲端平台的開發</h2>
+                    </div>
+                    
+                    <template v-for="(row, row_idx) in cards">
+                        <div class="flex-box">
+                            <div v-for="(el, idx) in row" class="card" 
+                                :key="`card-${row_idx}-${idx}`"
+                                :style="{ opacity: (row_idx==2 && (idx==1 || idx==2)) ? 0 : 1 }"
+                            >
+                                <div class="card__img-box">
+                                    <img :src="el.src" alt="el.name" class="card__img">
+                                </div>
+                                <h4 class="card__heading">
+                                    <span :class="`card__heading-span card__heading-span--${el.catagory}`">{{ el.prodName }}</span>
+                                </h4>
+                                <div class="card__details">
+                                    {{ el.msg }}
+                                </div>
+                                <a :href="`#popup-${el.name}`" class="btn btn--blue u-margin-bottom-small">Learn More</a>
+                            </div>
+                        </div>
+                    </template>
+                   
+                </section>
+                <section id="section-features" class="section-features">
+                    <!-- 公司特色 -->
+                    <div class="bg-video">
+                        <video class="bg-video__content" autoplay muted loop>
+                            <source src="img/video.mp4" type="video/mp4">
+                            <!-- <source src="img/video.webm" type="video/webm"> -->
+                            Your browser is not supported!
+                        </video>
+                    </div>
+                    <div class= "u-center-text u-margin-bottom-medium u-padding-top-medium">
+                        <h2 class="heading-secondary heading-secondary--dark">輕巧.方便.專業</h2>
+                    </div>
+                    <div class="feature-box">
+                        <div class="feature-box__item">
+                            <svg class="feature-box__icon">
+                                <use xlink:href="img/sprite.svg#icon-home"></use>
+                            </svg>
+                            <div class="feature-box__text">
+                                <h3 class="heading-tertiary">居家照護</h3>
+                            </div>
+                        </div>
+                        <div class="feature-box__item">
+                            <svg class="feature-box__icon">
+                                <use xlink:href="img/sprite.svg#icon-tablet"></use>
+                            </svg>
+                            <div class="feature-box__text">
+                                <h3 class="heading-tertiary">即時監測</h3>
+                            </div>
+                        </div>
+                        <div class="feature-box__item">
+                            <svg class="feature-box__icon">
+                                <use xlink:href="img/sprite.svg#icon-tools"></use>
+                            </svg>
+                            <div class="feature-box__text">
+                                <h3 class="heading-tertiary">精準醫療</h3>
+                            </div>
+                        </div>
+                        <div class="feature-box__item">
+                            <svg class="feature-box__icon">
+                                <use xlink:href="img/sprite.svg#icon-v-card"></use>
+                            </svg>
+                            <div class="feature-box__text">
+                                <h3 class="heading-tertiary">隱私保障</h3>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </section>
+                <section class="section-stories">
+                    <!-- 公司故事 -->
+                    <svg class="stories__triangle">
+                        <use xlink:href="img/sprite.svg#icon-triangle-down"></use>
+                    </svg>
+                    <div class="stories__box">
+                        <div class="stories__img-box">
+                            <img src="img/member.jpg" alt="member" class="stories__img">
+                        </div>
+                        <div class="stories__details">
+                            裕晶醫學科技(Yutech)創立於2019年，源自於國立成功大學CBIC--通訊暨生物積體電路設計實驗室，致力於生醫系統晶片、生醫穿戴式裝置與手機、雲端平台的開發，以提升人類健康品質為核心目標，因此，裕晶醫學科技推出”貼身守護神”系列產品，將提升人類健康品質這項目標，循序漸進經醫療科技推廣至日常穿戴監控且普及至教育推廣市場，由特定場域普及至普羅大眾以增進人類社會福祉。
+                            裕晶醫學科技擁有系統硬體設計、軟韌體開發技術、物聯網系統整合、AI人工智慧以及系統晶片整合設計等多項前瞻研究技術能力，在兩岸、美國取得40餘種專利技術，可提供客戶客製化系統設計等多項服務，並銷售生醫穿戴系統模組。
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <!-- 活動照片 -->
+                    <div class="gallery">
+                        <figure 
+                            v-for="(el, idx) in galleryPictures" 
+                            :class="`gallery__item gallery__item--${idx+1}`"
+                            :key="`Gallery image ${idx+1}`"
+                        >
+                            <img :src="el" :alt="`Gallery image ${idx+1}`" class="gallery__img">
+                        </figure>
+                    </div>
+                </section>
+            </main>
+    
+            <footer class="footer">
+                <div class="navs">
+                    <ul class="nav">
+                        <li class="nav__item"><a href="#" class="nav__link">裕晶醫學科技<br>股份有限公司</a></li>
+                        <li class="nav__item"><a href="#" class="nav__link">臺南市中西區<br>民族路二段153號7樓之4</a></li>
+                    </ul>
+                    <ul class="nav">
+                        <li class="nav__item"><a href="#" class="nav__link">信箱<br>shuennyuhlee@gmail.com</a></li>
+                        <li class="nav__item"><a href="#" class="nav__link">電話<br>(06)221-6189</a></li>
+                    </ul>
+                    <ul class="nav nav__icons">
+                        <li class="nav__item">
+                            <a href="https://www.youtube.com/channel/UCDUCtLte-d7foSL4wNmjoEg" class="nav__link">
+                                <svg class="nav__icon">
+                                    <use xlink:href="img/sprite.svg#icon-youtube"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="https://github.com/YuTecHealth" class="nav__link">
+                                <svg class="nav__icon">
+                                    <use xlink:href="img/sprite.svg#icon-github"></use>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="copyright">
+                    <div class="copyright__logo-box">
+                        <img src="img/logo.jpg" alt="Logo" class="copyright__logo">
+                    </div>
+                    <div class="copyright__text">
+                        &copy; Copyright 2021 Yutech Corp. by myku. All right reserved.
+                    </div>
+                </div>
+            </footer>
+    
+    
+
+            <div v-for="(el, idx) in modals" class="popup" :id="`popup-${el.name}`" :key="`popup-${el.name}`">
+                <a href="#section-about" class="popup__close">&times;</a>
+                <div class="popup__content">
+                    <div class="popup_img-box">
+                        <img :src="el.src" :alt="el.name" class="popup__img">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        
+
+
+
+
+        <script src="https://unpkg.com/vue@next"></script>
+        <script src="./js/main.js"></script>
+    </body>
+</html>

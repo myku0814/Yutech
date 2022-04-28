@@ -1,0 +1,42 @@
+.section {
+    &-about {
+        position: relative;
+        padding-top: 50vh;
+        margin-top: -50vh;
+        padding-bottom: 3rem;
+        background-image: linear-gradient(
+            to right, 
+            rgba($color-primary-light, 0.5),
+            rgba($color-primary-dark, 1)
+        );
+
+        @include respond("tab-port") {
+            padding-top: 45vh;
+        }
+        @include respond("phone") {
+            padding-top: 25vh;
+        }
+    }
+
+    &-features {
+        position: relative;
+    }
+
+    &-stories {
+        position: relative;
+        padding: 5rem;
+        @include respond("tab-port") {
+            padding: 3rem;
+        }
+        @include respond("phone") {
+            padding: 1.5rem;
+        }
+        background-image: linear-gradient(
+            to right bottom, 
+            #105761aa, #006b70aa, #00807baa, 
+            #009581aa, #19aa81aa, #3fb373aa, 
+            #60ba63aa, #80c050aa, #a0b92faa, 
+            #c0b004aa, #e0a300aa, #ff9100aa
+        );
+    }
+}

@@ -1,0 +1,34 @@
+.header {
+    z-index: 10;
+    position: relative;
+    height: 85vh;
+    background-image: 
+        linear-gradient(
+            to right bottom, 
+            rgba($color-primary-light, 0.1),
+            rgba($color-primary-dark, 0.1)
+        ), 
+        url(../../img/home_cover.png);
+    background-size: cover;
+    background-position: left;
+    background-color: $color-white;
+
+
+    @supports(clip-path: ellipse(0 0 at 0 0)) or (-webkit-clip-path: ellipse(0 0 at 0 0)) {
+        clip-path: ellipse(70% 70% at 35% 16%)
+    }
+    
+    @include respond("phone") {
+        @supports(clip-path: ellipse(0 0 at 0 0)) or (-webkit-clip-path: ellipse(0 0 at 0 0)) {
+            clip-path: ellipse(80% 50% at 50% 16%)
+        }    
+    }
+    &__text-box {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: 70vw;
+    }
+}
