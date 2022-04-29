@@ -1,6 +1,55 @@
+// .feature-box {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+//     padding: 4rem;
+
+//     @include respond("tab-port") { 
+//         padding: 3rem;
+//     }
+
+//     @include respond("phone") { 
+//         padding: 2rem;
+//     }
+
+//     &__item {
+//         margin: 1rem;
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//         background-color: $color-white;
+//         width: 40%;
+//         transform: skewX(12deg);
+
+//         @include respond("tab-port") { 
+//             width: 50%;
+//         }
+
+//         @include respond("phone") { 
+//             width: 60%;
+//         }
+//     }
+
+//     &__text {
+//         transform: skewX(-12deg);
+//     }
+
+//     &__icon {
+//         height: 3.5rem;
+//         width: 3.5rem;
+//         fill: $color-primary;
+//         margin: 1rem;
+//         transform: skewX(-12deg);
+//     }
+// }
+
+
+
+
+
 .feature-box {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 4rem;
@@ -11,9 +60,29 @@
 
     @include respond("phone") { 
         padding: 2rem;
+        flex-direction: column;
     }
 
-    &__item {
+    &__img {
+        width: 100%;
+        &-box {
+            flex-basis: 40%;
+            border-radius: 1rem;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+
+    &__word-box {
+        flex-basis: 60%;
+        padding: 2rem;
+    }
+
+
+    &__label {
         margin: 1rem;
         display: flex;
         justify-content: center;
@@ -22,17 +91,9 @@
         width: 40%;
         transform: skewX(12deg);
 
-        @include respond("tab-port") { 
-            width: 50%;
-        }
-
         @include respond("phone") { 
-            width: 60%;
+            margin: 1rem auto;
         }
-    }
-
-    &__text {
-        transform: skewX(-12deg);
     }
 
     &__icon {
@@ -41,5 +102,14 @@
         fill: $color-primary;
         margin: 1rem;
         transform: skewX(-12deg);
+    }
+
+    &__title {
+        transform: skewX(-12deg);
+    }
+
+    &__text {
+        color: $color-grey-dark-1;
+        font-size: 2rem;
     }
 }

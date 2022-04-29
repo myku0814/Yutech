@@ -8,13 +8,18 @@
     @include respond("laptop") {
         padding: 2rem;
     }
+
+
+    @include respond("phone") {
+        flex-direction: column;
+    }
 }
 
 .navs {
     display: flex;
     justify-content: center;
     align-items: center;
-
+    flex-basis: 75%;
     @include respond("phone") {
         flex-direction: column;
     }
@@ -136,15 +141,18 @@
     @include respond("laptop") {
         flex-basis: 20%;
     }
+
+    @include respond("tab-port") {
+        margin-top: 4rem;
+    }
     
     &__logo-box{
-
+        
     }
     &__logo {
         height: 6rem;
     }
     &__text {
-        font-size: 1.4rem;
         color: $color-grey-dark-2;
         margin: 0 auto;
         width: 70%;
@@ -152,14 +160,6 @@
             margin: 0 -5rem;
             width: 80%;
         }
-        @include respond("tab-port") {
-            margin-top: 1rem;
-        }
-        @include respond("phone") {
-            margin-top: 4rem;
-        }
         text-align: center;
-        
-
     }
 }

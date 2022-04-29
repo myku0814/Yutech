@@ -68,7 +68,7 @@
                         <div class="flex-box">
                             <div v-for="(el, idx) in row" class="card" 
                                 :key="`card-${row_idx}-${idx}`"
-                                :style="{ opacity: (row_idx==2 && (idx==1 || idx==2)) ? 0 : 1 }"
+                                :class="{ card__hidden: row_idx==2 && (idx==1 || idx==2) }"
                             >
                                 <div class="card__img-box">
                                     <img :src="el.src" alt="el.name" class="card__img">
@@ -79,7 +79,9 @@
                                 <div class="card__details">
                                     {{ el.msg }}
                                 </div>
-                                <a :href="`#popup-${el.name}`" class="btn btn--blue u-margin-bottom-small">Learn More</a>
+                                <div class="card__btn">
+                                    <a :href="`#popup-${el.name}`" class="btn btn--blue u-margin-bottom-small">Learn More</a>
+                                </div>
                             </div>
                         </div>
                     </template>
@@ -87,51 +89,27 @@
                 </section>
                 <section id="section-features" class="section-features">
                     <!-- 公司特色 -->
-                    <div class="bg-video">
-                        <video class="bg-video__content" autoplay muted loop>
-                            <source src="img/video.mp4" type="video/mp4">
-                            <!-- <source src="img/video.webm" type="video/webm"> -->
-                            Your browser is not supported!
-                        </video>
-                    </div>
                     <div class= "u-center-text u-margin-bottom-medium u-padding-top-medium">
                         <h2 class="heading-secondary heading-secondary--dark">輕巧.方便.專業</h2>
                     </div>
-                    <div class="feature-box">
-                        <div class="feature-box__item">
-                            <svg class="feature-box__icon">
-                                <use xlink:href="img/sprite.svg#icon-home"></use>
-                            </svg>
+                    <div v-for="(el, idx) in features" class="feature-box" :key="idx">
+                        <div class="feature-box__img-box">
+                            <img :src="el.src" :alt="el.name" class="feature-box__img">
+                        </div>
+                        <div class="feature-box__word-box">
+                            <div class="feature-box__label">
+                                <svg class="feature-box__icon">
+                                    <use :xlink:href="`img/sprite.svg#${el.icon}`"></use>
+                                </svg>
+                                <div class="feature-box__title">
+                                    <h3 class="heading-tertiary">{{ el.title }}</h3>
+                                </div>
+                            </div>
                             <div class="feature-box__text">
-                                <h3 class="heading-tertiary">居家照護</h3>
+                                {{ el.msg }}
                             </div>
                         </div>
-                        <div class="feature-box__item">
-                            <svg class="feature-box__icon">
-                                <use xlink:href="img/sprite.svg#icon-tablet"></use>
-                            </svg>
-                            <div class="feature-box__text">
-                                <h3 class="heading-tertiary">即時監測</h3>
-                            </div>
-                        </div>
-                        <div class="feature-box__item">
-                            <svg class="feature-box__icon">
-                                <use xlink:href="img/sprite.svg#icon-tools"></use>
-                            </svg>
-                            <div class="feature-box__text">
-                                <h3 class="heading-tertiary">精準醫療</h3>
-                            </div>
-                        </div>
-                        <div class="feature-box__item">
-                            <svg class="feature-box__icon">
-                                <use xlink:href="img/sprite.svg#icon-v-card"></use>
-                            </svg>
-                            <div class="feature-box__text">
-                                <h3 class="heading-tertiary">隱私保障</h3>
-                            </div>
-                        </div>
-                    </div>
-                    
+                    </div>                
                 </section>
                 <section class="section-stories">
                     <!-- 公司故事 -->
@@ -169,21 +147,14 @@
                         <li class="nav__item"><a href="#" class="nav__link">臺南市中西區<br>民族路二段153號7樓之4</a></li>
                     </ul>
                     <ul class="nav">
-                        <li class="nav__item"><a href="#" class="nav__link">信箱<br>shuennyuhlee@gmail.com</a></li>
+                        <li class="nav__item"><a href="#" class="nav__link">信箱<br>service@yutechealth.com</a></li>
                         <li class="nav__item"><a href="#" class="nav__link">電話<br>(06)221-6189</a></li>
                     </ul>
                     <ul class="nav nav__icons">
-                        <li class="nav__item">
-                            <a href="https://www.youtube.com/channel/UCDUCtLte-d7foSL4wNmjoEg" class="nav__link">
+                        <li v-for="(el, idx) in waterBtns" class="nav__item" :key="idx">
+                            <a target="_blank" :href="el.href" class="nav__link">
                                 <svg class="nav__icon">
-                                    <use xlink:href="img/sprite.svg#icon-youtube"></use>
-                                </svg>
-                            </a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="https://github.com/YuTecHealth" class="nav__link">
-                                <svg class="nav__icon">
-                                    <use xlink:href="img/sprite.svg#icon-github"></use>
+                                    <use :xlink:href="`img/sprite.svg#${el.icon}`"></use>
                                 </svg>
                             </a>
                         </li>

@@ -1,18 +1,17 @@
 .flex-box {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
 
     @include respond("phone") {
         width: 70%;
         margin: 0 auto;
         flex-direction: column;
-        align-items: stretch;
+        
     }
     @include respond("small-phone") {
         width: 80%;
         margin: 0 auto;
         flex-direction: column;
-        align-items: stretch;
     }
 }

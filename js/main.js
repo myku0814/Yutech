@@ -44,6 +44,16 @@ Vue.createApp({
                     { catagory: 'education', name: 'trianswer', src: './img/trianswer.png', prodName: '試穿戴', msg: '試穿戴是一款穿戴式生醫訊號開發平台，藉由小巧的感測積木，構築您創意的城堡。' },
                     { catagory: 'education', name: 'trianswer', src: './img/trianswer.png', prodName: '試穿戴', msg: '試穿戴是一款穿戴式生醫訊號開發平台，藉由小巧的感測積木，構築您創意的城堡。' }
                 ]
+            ],
+            features: [
+                { name: 'home care',  src: './img/fea-1.jpg', icon: 'icon-home', title: '居家照護', msg: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem, tempora nulla! Cum totam accusantium expedita accusamus blanditiis deleniti similique officiis eos, impedit eveniet, fuga aliquid earum facilis quibusdam nostrum eligendi.' },
+                { name: 'real-time monitor',  src: './img/fea-2.jpg', icon: 'icon-tablet', title: '即時監測', msg: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem, tempora nulla! Cum totam accusantium expedita accusamus blanditiis deleniti similique officiis eos, impedit eveniet, fuga aliquid earum facilis quibusdam nostrum eligendi.' },
+                { name: 'high precision diagnostics',  src: './img/fea-3.jpg', icon: 'icon-tools', title: '精準醫療', msg: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem, tempora nulla! Cum totam accusantium expedita accusamus blanditiis deleniti similique officiis eos, impedit eveniet, fuga aliquid earum facilis quibusdam nostrum eligendi.' },
+                { name: 'high privacy security',  src: './img/fea-4.jpg', icon: 'icon-v-card', title: '隱私保障', msg: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem, tempora nulla! Cum totam accusantium expedita accusamus blanditiis deleniti similique officiis eos, impedit eveniet, fuga aliquid earum facilis quibusdam nostrum eligendi.' }
+            ],
+            waterBtns: [
+                { icon: 'icon-youtube', href: 'https://www.youtube.com/channel/UCDUCtLte-d7foSL4wNmjoEg' },
+                { icon: 'icon-github', href: 'https://github.com/YuTecHealth' }
             ]
         };
     }

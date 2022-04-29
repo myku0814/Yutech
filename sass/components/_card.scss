@@ -13,6 +13,10 @@
     text-align: center;
     
 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
     &:hover {
         transform: translateY(-.5rem);
     }
@@ -25,9 +29,9 @@
             height: 50vw;
         }
         object-fit: cover;
-        &-box {
-            height: 100%;
-        }
+        // &-box {
+        //     height: 100%;
+        // }
         border-top-left-radius: 2rem;
         border-top-right-radius: 2rem;
     }
@@ -77,12 +81,29 @@
     }
 
     &__details {
+        font-size: 2rem;
+        @include respond("tab-port") {
+            padding: 4rem 2rem 2rem 2rem;
+        }
         color: $color-primary-dark;
         padding: 6rem 3rem 3rem 3rem;
         @include respond("phone") {
             padding: 4rem 2rem 2rem 2rem;
         }
+    }
+
+    &__btn {
+        margin: 0 auto;
+    }
 
 
+
+
+    // hidden card
+    &__hidden {
+        opacity: 0;
+        @include respond("phone") {
+            display: none;
+        }
     }
 }
