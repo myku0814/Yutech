@@ -31,13 +31,9 @@
                     </a>
     
                     <ul class="navigation__list">
-                        <li class="navigation__item"><a href="#popup-yuguard" class="navigation__link">貼心片</a></li>
-                        <li class="navigation__item"><a href="#popup-yusound" class="navigation__link">貼心音</a></li>
-                        <li class="navigation__item"><a href="#popup-yurine" class="navigation__link">尿檢譯</a></li>
-                        <li class="navigation__item"><a href="#popup-yucloth" class="navigation__link">貼心衣</a></li>
-                        <li class="navigation__item"><a href="#popup-yubelt" class="navigation__link">貼心帶</a></li>
-                        <li class="navigation__item"><a href="#popup-yupet" class="navigation__link">寵心衣</a></li>
-                        <li class="navigation__item"><a href="#popup-trianswer" class="navigation__link">試穿戴</a></li>
+                        <li v-for="(el, idx) in modals" :key="idx" class="navigation__item">
+                            <a :href="`#popup-${el.name}`" class="navigation__link" @click.prevent="toggleFlag(el.name, $event)">{{ el.prodName }}</a>
+                        </li>
                     </ul>
                 </nav>
             </div>
@@ -80,7 +76,7 @@
                                     {{ el.msg }}
                                 </div>
                                 <div class="card__btn">
-                                    <a :href="`#popup-${el.name}`" class="btn btn--blue u-margin-bottom-small">Learn More</a>
+                                    <a :href="`#popup-${el.name}`" class="btn btn--blue u-margin-bottom-small" @click.prevent="toggleFlag(el.name, $event)">Learn More</a>
                                 </div>
                             </div>
                         </div>
@@ -118,7 +114,7 @@
                     </svg>
                     <div class="stories__box">
                         <div class="stories__img-box">
-                            <img src="img/member.jpg" alt="member" class="stories__img">
+                            <img src="./img/member.jpg" alt="member" class="stories__img">
                         </div>
                         <div class="stories__details">
                             裕晶醫學科技(Yutech)創立於2019年，源自於國立成功大學CBIC--通訊暨生物積體電路設計實驗室，致力於生醫系統晶片、生醫穿戴式裝置與手機、雲端平台的開發，以提升人類健康品質為核心目標，因此，裕晶醫學科技推出”貼身守護神”系列產品，將提升人類健康品質這項目標，循序漸進經醫療科技推廣至日常穿戴監控且普及至教育推廣市場，由特定場域普及至普羅大眾以增進人類社會福祉。
@@ -172,19 +168,33 @@
             </footer>
     
     
-
-            <div v-for="(el, idx) in modals" class="popup" :id="`popup-${el.name}`" :key="`popup-${el.name}`">
-                <a href="#section-about" class="popup__close">&times;</a>
-                <div class="popup__content">
-                    <div class="popup_img-box">
-                        <img :src="el.src" :alt="el.name" class="popup__img">
+            <template v-for="(el, idx) in modals">
+                <transition>
+                    <div class="popup" :id="`popup-${el.name}`" :key="`popup-${el.name}`" v-if="showModals[el.name]">
+                        <div class="popup__bg" @click.prevent="toggleFlag(el.name, $event)"></div>
+                        <a href="#" class="popup__close" @click.prevent="toggleFlag(el.name, $event)">&times;</a>
+                        <div class="popup__content">
+                            <div class="popup_img-box">
+                                <img :src="el.src" :alt="el.name" class="popup__img">
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-
+                </transition>
+            </template>
+            
         </div>
 
-        
+        <svg viewBox="0 0 643 525">
+            <defs>
+                <clipPath id="shape">
+                    <path fill="none" d="m 0 0 q 0 10 40 10 q 40 0 40 10 l 0 230 l -80 0 l 0 -250"/>
+                </clipPath>
+            </defs>
+
+            <image width="300" height="300" clip-path="url(#shape)"  
+            xlink:href="./img/fea-1.jpg" 
+            ></image>
+        </svg>
 
 
 

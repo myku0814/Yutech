@@ -19,13 +19,13 @@ Vue.createApp({
                 './img/gal-14.jpeg'
             ],
             modals: [
-                { name: 'yuguard', src: './img/yuguard_detail.PNG' },
-                { name: 'yusound', src: './img/yusound_detail.PNG' },
-                { name: 'yurine', src: './img/yurine_detail.PNG' },
-                { name: 'yucloth', src: './img/yucloth_detail.PNG' },
-                { name: 'yubelt', src: './img/yubelt_detail.PNG' },
-                { name: 'yupet', src: './img/yupet_detail.PNG' },
-                { name: 'trianswer', src: './img/trianswer_detail.PNG' }
+                { name: 'yuguard', src: './img/yuguard_detail.PNG', prodName: '貼心片' },
+                { name: 'yusound', src: './img/yusound_detail.PNG', prodName: '貼心音' },
+                { name: 'yurine', src: './img/yurine_detail.PNG', prodName: '尿檢譯' },
+                { name: 'yucloth', src: './img/yucloth_detail.PNG', prodName: '貼心衣' },
+                { name: 'yubelt', src: './img/yubelt_detail.PNG',  prodName: '貼心帶' },
+                { name: 'yupet', src: './img/yupet_detail.PNG', prodName: '寵心衣' },
+                { name: 'trianswer', src: './img/trianswer_detail.PNG', prodName: '試穿戴' }
             ],
             cards: [
                 [
@@ -54,7 +54,21 @@ Vue.createApp({
             waterBtns: [
                 { icon: 'icon-youtube', href: 'https://www.youtube.com/channel/UCDUCtLte-d7foSL4wNmjoEg' },
                 { icon: 'icon-github', href: 'https://github.com/YuTecHealth' }
-            ]
+            ],
+            showModals: {
+                yuguard: false,
+                yusound: false,
+                yurine: false,
+                yucloth: false,
+                yubelt: false,
+                yupet: false,
+                trianswer: false
+            }
         };
+    },
+    methods: {
+        toggleFlag: function(flagKey, evt) {
+            this.showModals[flagKey] = !this.showModals[flagKey];
+        }
     }
 }).mount('#app');

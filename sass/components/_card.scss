@@ -101,7 +101,7 @@
 
     // hidden card
     &__hidden {
-        opacity: 0;
+        visibility: hidden;
         @include respond("phone") {
             display: none;
         }
