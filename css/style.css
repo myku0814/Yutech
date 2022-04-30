@@ -519,7 +519,7 @@ body {
   .carousel__inner {
     position: relative;
     width: 100%;
-    height: 60vh;
+    height: 65vh;
     overflow: hidden; }
   .carousel__item {
     position: absolute;
@@ -1103,7 +1103,7 @@ body {
   @media only screen and (max-width: 37.5em) {
     .section-about {
       margin-top: -30vh;
-      padding-top: 5vh; } }
+      padding-top: 7vh; } }
 
 .section-features {
   position: relative;
