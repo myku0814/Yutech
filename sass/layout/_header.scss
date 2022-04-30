@@ -14,15 +14,15 @@
     background-color: $color-white;
 
 
-    @supports(clip-path: ellipse(0 0 at 0 0)) or (-webkit-clip-path: ellipse(0 0 at 0 0)) {
-        clip-path: ellipse(70% 70% at 35% 16%)
-    }
+    // @supports(clip-path: ellipse(0 0 at 0 0)) or (-webkit-clip-path: ellipse(0 0 at 0 0)) {
+    //     clip-path: ellipse(70% 70% at 35% 16%)
+    // }
     
-    @include respond("phone") {
-        @supports(clip-path: ellipse(0 0 at 0 0)) or (-webkit-clip-path: ellipse(0 0 at 0 0)) {
-            clip-path: ellipse(80% 50% at 50% 16%)
-        }    
-    }
+    // @include respond("phone") {
+    //     @supports(clip-path: ellipse(0 0 at 0 0)) or (-webkit-clip-path: ellipse(0 0 at 0 0)) {
+    //         clip-path: ellipse(80% 50% at 50% 16%)
+    //     }    
+    // }
     &__text-box {
         position: absolute;
         top: 40%;

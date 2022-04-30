@@ -67,7 +67,17 @@
         fill: $color-primary;
     }
 
+    &__text {
+        margin-top: 2px;
+        color: $color-white;
+    }
 
+    &__item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 
     &__icons {
         display: flex;

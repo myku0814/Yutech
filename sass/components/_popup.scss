@@ -6,9 +6,9 @@
     left: 0;
     background-color: rgba($color-black, .8);
     z-index: 9000;
-    // opacity: 0;
-    // visibility: hidden;
-    visibility: visible;
+    opacity: 0;
+    visibility: hidden;
+    // visibility: visible;
     transition: all .3s;
     @supports(-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
         -webkit-backdrop-filter: blur(10px);
@@ -31,8 +31,8 @@
         border-radius: 3px;
         display: block;
         overflow: hidden;
-        // opacity: 0;
-        transform: translate(-50%, -50%) scale(1);
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(.25);
         transition: all .5s .2s;
         z-index: 9001;
     }
@@ -47,6 +47,14 @@
         max-width: 75vw;
     }
 
+    &__target {
+        opacity: 1;
+        visibility: visible;
+    }
+    &__target__content {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
     // &:target {
     //     opacity: 1;
     //     visibility: visible;

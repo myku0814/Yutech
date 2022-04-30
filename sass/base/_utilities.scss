@@ -28,3 +28,36 @@
 .u-padding-top-medium { 
     padding-top: 4rem !important; 
 }
+
+
+
+
+// custom sass
+.typed-text {
+    color: #cffffe;
+}
+
+.cursor {
+    display: inline-block;
+    margin-left: 3px;
+    width: 4px;
+    background-color: $color-grey-light-3;
+    animation: cursorBlink 1s infinite;
+
+    @keyframes cursorBlink {
+        49% { background-color: $color-grey-light-3; }
+        50% { background-color: transparent; }
+        99% { background-color: transparent; }
+    }
+}
+
+.typing {
+    animation: none;
+}
+
+.include-svg {
+    position: absolute;
+    top: 0;
+    left: 0; 
+    z-index: -9999;
+}

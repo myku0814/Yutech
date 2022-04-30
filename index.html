@@ -29,10 +29,17 @@
                             <img src="img/logo.jpg" alt="Logo" class="navigation__logo">
                         </div>
                     </a>
-    
                     <ul class="navigation__list">
-                        <li v-for="(el, idx) in modals" :key="idx" class="navigation__item">
-                            <a :href="`#popup-${el.name}`" class="navigation__link" @click.prevent="toggleFlag(el.name, $event)">{{ el.prodName }}</a>
+                        <li 
+                            class="navigation__item"
+                            v-for="(el, idx) in modals" 
+                            :key="idx" 
+                        >
+                            <a 
+                                class="navigation__link" 
+                                :href="`#popup-${el.name}`" 
+                                @click.prevent="toggleFlagWithCloseSidebar(el.name, $event)"
+                            >{{ el.prodName }}</a>
                         </li>
                     </ul>
                 </nav>
@@ -40,7 +47,6 @@
     
             <header class="header">
                 <!-- 品牌宣言 -->
-                
                 <div class="header__text-box">
                     <h1 class="heading-primary">
                         <span class="heading-primary--main">貼身守護神</span>
@@ -53,44 +59,127 @@
             <main>
                 <section id="section-about" class="section-about">
                     <ul class="bubbles">
-                        <li v-for="index in 10" :key="index"></li>
+                        <li v-for="idx in 10" :key="idx"></li>
                     </ul>
                     <!-- 7樣產品 -->
                     <div class= "u-center-text u-margin-bottom-big">
-                        <h2 class="heading-secondary heading-secondary--light">生醫系統晶片.生醫穿戴式裝置.手機雲端平台的開發</h2>
+                        <h2 class="heading-secondary heading-secondary--light"
+                        >生醫<span class="typed-text">
+                                {{ mainText }}
+                            </span>
+                            <span class="cursor" :class="{ typing: mainTextTypeStatus }">&nbsp;</span>
+                        </h2>
                     </div>
                     
-                    <template v-for="(row, row_idx) in cards">
-                        <div class="flex-box">
-                            <div v-for="(el, idx) in row" class="card" 
-                                :key="`card-${row_idx}-${idx}`"
-                                :class="{ card__hidden: row_idx==2 && (idx==1 || idx==2) }"
-                            >
-                                <div class="card__img-box">
-                                    <img :src="el.src" alt="el.name" class="card__img">
-                                </div>
-                                <h4 class="card__heading">
-                                    <span :class="`card__heading-span card__heading-span--${el.catagory}`">{{ el.prodName }}</span>
-                                </h4>
-                                <div class="card__details">
-                                    {{ el.msg }}
-                                </div>
-                                <div class="card__btn">
-                                    <a :href="`#popup-${el.name}`" class="btn btn--blue u-margin-bottom-small" @click.prevent="toggleFlag(el.name, $event)">Learn More</a>
+                    <div class="cards">
+                        <template v-for="(row, row_idx) in cards">
+                            <div class="flex-box">
+                                <div 
+                                    class="card"
+                                    v-for="(el, idx) in row" 
+                                    :key="`card-${row_idx}-${idx}`"
+                                    :class="{ card__hidden: row_idx==2 && (idx==1 || idx==2) }"
+                                >
+                                    <div class="card__img-box">
+                                        <img 
+                                            class="card__img"
+                                            :src="el.src" 
+                                            :alt="el.name"
+                                        >
+                                    </div>
+                                    <h4 class="card__heading">
+                                        <span :class="`card__heading-span card__heading-span--${el.catagory}`">{{ el.prodName }}</span>
+                                    </h4>
+                                    <div class="card__details">
+                                        {{ el.msg }}
+                                    </div>
+                                    <div class="card__btn">
+                                        <a 
+                                            class="btn btn--blue u-margin-bottom-small"
+                                            :href="`#popup-${el.name}`"  
+                                            @click.prevent="toggleFlag(el.name, $event)"
+                                        >了解更多</a>
+                                    </div>
                                 </div>
                             </div>
+                        </template>
+                    </div>
+
+                    <div class="carousels">
+                        <div class="carousel">
+                            <div class="carousel__inner">
+                                <div class="carousel__indicators">
+                                    <button 
+                                        class="carousel__indicator-item" 
+                                        v-for="(el, idx) in slides.length" 
+                                        :key="idx" 
+                                        :class="{ carousel__indicator_active: currentSlide === idx }"
+                                        @click.prevent="slideSwitch(idx)"
+                                    ></button>
+                                </div>
+                                <template v-for="(el, idx) in slides">
+                                    <transition :name="`slide-${slideDirection}`">
+                                        <div 
+                                            class="carousel__item" 
+                                            :key="idx" 
+                                            v-show="currentSlide === idx" 
+                                            @mouseenter="stopSlideTimer()" 
+                                            @mouseout="startSlideTimer()"
+                                        >
+                                            <div class="card">
+                                                <div class="card__img-box">
+                                                    <img 
+                                                        class="card__img"
+                                                        :src="el.src" 
+                                                        :alt="el.name"
+                                                    >
+                                                </div>
+                                                <h4 class="card__heading">
+                                                    <span :class="`card__heading-span card__heading-span--${el.catagory}`">{{ el.prodName }}</span>
+                                                </h4>
+                                                <div class="card__details">
+                                                    {{ el.msg }}
+                                                </div>
+                                                <div class="card__btn">
+                                                    <a 
+                                                        class="btn btn--blue u-margin-bottom-small"
+                                                        :href="`#popup-${el.name}`"  
+                                                        @click.prevent="toggleFlag(el.name, $event)"
+                                                    >了解更多</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </transition>
+                                </template>
+                                <button 
+                                    class="carousel__control carousel__control--left" 
+                                    @click.prevent="slidePrev()"
+                                >Prev</button>
+                                <button 
+                                    class="carousel__control carousel__control--right" 
+                                    @click.prevent="slideNext()"
+                                >Next</button>        
+                            </div>
                         </div>
-                    </template>
-                   
+                    </div>
                 </section>
+
                 <section id="section-features" class="section-features">
                     <!-- 公司特色 -->
                     <div class= "u-center-text u-margin-bottom-medium u-padding-top-medium">
                         <h2 class="heading-secondary heading-secondary--dark">輕巧.方便.專業</h2>
                     </div>
-                    <div v-for="(el, idx) in features" class="feature-box" :key="idx">
+                    <div 
+                        class="feature-box"
+                        v-for="(el, idx) in features"
+                        :key="idx"
+                    >
                         <div class="feature-box__img-box">
-                            <img :src="el.src" :alt="el.name" class="feature-box__img">
+                            <img 
+                                class="feature-box__img"
+                                :src="el.src" 
+                                :alt="el.name"
+                            >
                         </div>
                         <div class="feature-box__word-box">
                             <div class="feature-box__label">
@@ -130,7 +219,11 @@
                             :class="`gallery__item gallery__item--${idx+1}`"
                             :key="`Gallery image ${idx+1}`"
                         >
-                            <img :src="el" :alt="`Gallery image ${idx+1}`" class="gallery__img">
+                            <img 
+                                :src="el" 
+                                :alt="`Gallery image ${idx+1}`" 
+                                class="gallery__img"
+                            >
                         </figure>
                     </div>
                 </section>
@@ -147,12 +240,17 @@
                         <li class="nav__item"><a href="#" class="nav__link">電話<br>(06)221-6189</a></li>
                     </ul>
                     <ul class="nav nav__icons">
-                        <li v-for="(el, idx) in waterBtns" class="nav__item" :key="idx">
+                        <li 
+                            class="nav__item"
+                            v-for="(el, idx) in waterBtns"  
+                            :key="idx"
+                        >
                             <a target="_blank" :href="el.href" class="nav__link">
                                 <svg class="nav__icon">
                                     <use :xlink:href="`img/sprite.svg#${el.icon}`"></use>
                                 </svg>
                             </a>
+                            <span class="nav__text">{{ el.name }}</span>
                         </li>
                     </ul>
                 </div>
@@ -162,39 +260,56 @@
                         <img src="img/logo.jpg" alt="Logo" class="copyright__logo">
                     </div>
                     <div class="copyright__text">
-                        &copy; Copyright 2021 Yutech Corp. by myku. All right reserved.
+                        &copy; Copyright 2022 Yutech Corp. by myku. All right reserved.
                     </div>
                 </div>
             </footer>
     
     
-            <template v-for="(el, idx) in modals">
-                <transition>
-                    <div class="popup" :id="`popup-${el.name}`" :key="`popup-${el.name}`" v-if="showModals[el.name]">
-                        <div class="popup__bg" @click.prevent="toggleFlag(el.name, $event)"></div>
-                        <a href="#" class="popup__close" @click.prevent="toggleFlag(el.name, $event)">&times;</a>
-                        <div class="popup__content">
-                            <div class="popup_img-box">
-                                <img :src="el.src" :alt="el.name" class="popup__img">
-                            </div>
-                        </div>
+         
+             
+            <div 
+                class="popup"
+                v-for="(el, idx) in modals"  
+                :id="`popup-${el.name}`" 
+                :key="`popup-${el.name}`" 
+                :class="{ popup__target: showModals[el.name] }"
+            >
+                <div class="popup__bg" @click.prevent="toggleFlag(el.name, $event)"></div>
+                <a href="#" class="popup__close" @click.prevent="toggleFlag(el.name, $event)">&times;</a>
+                <div class="popup__content" :class="{ popup__target__content: showModals[el.name] }">
+                    <div class="popup_img-box">
+                        <img 
+                            class="popup__img"
+                            :src="el.src" 
+                            :alt="el.name" 
+                        >
                     </div>
-                </transition>
-            </template>
-            
+                </div>
+            </div>
         </div>
 
-        <svg viewBox="0 0 643 525">
-            <defs>
-                <clipPath id="shape">
-                    <path fill="none" d="m 0 0 q 0 10 40 10 q 40 0 40 10 l 0 230 l -80 0 l 0 -250"/>
-                </clipPath>
-            </defs>
 
-            <image width="300" height="300" clip-path="url(#shape)"  
-            xlink:href="./img/fea-1.jpg" 
-            ></image>
-        </svg>
+        <!-- include-svg -->
+        <div class="include-svg">
+            <svg width="0" height="0">
+                <defs>
+                    <clipPath id="waveClip__two-way" clipPathUnits="objectBoundingBox">
+                    <path d="m 0 0.12 q 0 -0.04 0.5 -0.04 q 0.5 0 0.5 -0.08 l 0 1 l -1 0 l 0 -0.88"/>
+                    </clipPath>
+                </defs>
+            </svg>
+            <svg width="0" height="0">
+                <defs>
+                    <clipPath id="waveClip__one-way" clipPathUnits="objectBoundingBox">
+                    <path d="m 0 0.04 q 0 -0.04 0.5 -0.04 q 0.5 0 0.5 0 l 0 1 l -1 0 l 0 -0.96"/>
+                    </clipPath>
+                </defs>
+            </svg>
+        </div>
+        
+        
+
 
 
 

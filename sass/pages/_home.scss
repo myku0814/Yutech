@@ -1,20 +1,37 @@
 .section {
     &-about {
         position: relative;
-        padding-top: 50vh;
-        margin-top: -50vh;
+        padding-top: 27vh;
+        margin-top: -46vh;
         padding-bottom: 3rem;
+
+        z-index: 10;
         background-image: linear-gradient(
             to right, 
-            rgba($color-primary-light, 0.5),
+            rgba($color-primary-light, 1),
             rgba($color-primary-dark, 1)
         );
 
-        @include respond("tab-port") {
-            padding-top: 45vh;
+        min-height: 50vh;
+        @supports(clip-path: ellipse(0 0 at 0 0)) or (-webkit-clip-path: ellipse(0 0 at 0 0)) {
+            -webkit-clip-path: url(#waveClip__two-way);
+            clip-path: url(#waveClip__two-way);
         }
+        
+        @include respond("tab-land") {
+            padding-top: 22vh;
+        }
+
         @include respond("phone") {
-            padding-top: 25vh;
+            @supports(clip-path: ellipse(0 0 at 0 0)) or (-webkit-clip-path: ellipse(0 0 at 0 0)) {
+                -webkit-clip-path: url(#waveClip__one-way);
+                clip-path: url(#waveClip__one-way);
+            }
+        }
+
+        @include respond("phone") {
+            margin-top: -30vh;
+            padding-top: 5vh;
         }
     }
 
@@ -39,5 +56,18 @@
             #60ba63aa, #80c050aa, #a0b92faa, 
             #c0b004aa, #e0a300aa, #ff9100aa
         );
+    }
+}
+
+.cards {
+    @include respond("phone") { 
+        display: none;
+    }
+}
+
+.carousels {
+    display: none;
+    @include respond("phone") { 
+        display: block;
     }
 }
