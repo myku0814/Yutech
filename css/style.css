@@ -233,7 +233,7 @@ body {
       backdrop-filter: blur(10px);
       background-color: rgba(0, 0, 0, 0.3); } }
   .popup__bg {
-    height: 100vh;
+    height: 120vh;
     width: 100%;
     opacity: 0.01; }
   .popup__content {
@@ -524,7 +524,7 @@ body {
   .carousel__item {
     position: absolute;
     left: 50%;
-    top: 0;
+    top: 10%;
     transform: translateX(-50%);
     width: 100%; }
   .carousel__control {
@@ -533,20 +533,16 @@ body {
     border: none;
     display: inline-block;
     cursor: pointer;
-    position: absolute;
-    bottom: 0;
-    height: 10%;
-    width: 20%; }
-    .carousel__control--left {
-      left: 0; }
-    .carousel__control--right {
-      right: 0; }
+    padding: 1rem; }
   .carousel__indicators {
     position: absolute;
     left: 50%;
-    bottom: 0;
+    top: 0;
     transform: translateX(-50%);
-    z-index: 2; }
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
   .carousel__indicator-item {
     width: 10px;
     height: 10px;
@@ -1082,7 +1078,7 @@ body {
 
 .section-about {
   position: relative;
-  padding-top: 27vh;
+  padding-top: 29vh;
   margin-top: -46vh;
   padding-bottom: 3rem;
   z-index: 10;
@@ -1094,16 +1090,11 @@ body {
       clip-path: url(#waveClip__two-way); } }
   @media only screen and (max-width: 75em) {
     .section-about {
-      padding-top: 22vh; } }
-  @media only screen and (max-width: 37.5em) {
-    @supports (clip-path: ellipse(0 0 at 0 0)) or (-webkit-clip-path: ellipse(0 0 at 0 0)) {
-      .section-about {
-        -webkit-clip-path: url(#waveClip__one-way);
-        clip-path: url(#waveClip__one-way); } } }
+      padding-top: 25vh; } }
   @media only screen and (max-width: 37.5em) {
     .section-about {
-      margin-top: -30vh;
-      padding-top: 7vh; } }
+      margin-top: -37vh;
+      padding-top: 15vh; } }
 
 .section-features {
   position: relative;

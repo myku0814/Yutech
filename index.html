@@ -110,12 +110,20 @@
                             <div class="carousel__inner">
                                 <div class="carousel__indicators">
                                     <button 
+                                        class="carousel__control carousel__control--left" 
+                                        @click.prevent="slidePrev()"
+                                    >Prev</button>
+                                    <button 
                                         class="carousel__indicator-item" 
                                         v-for="(el, idx) in slides.length" 
                                         :key="idx" 
                                         :class="{ carousel__indicator_active: currentSlide === idx }"
                                         @click.prevent="slideSwitch(idx)"
                                     ></button>
+                                    <button 
+                                        class="carousel__control carousel__control--right" 
+                                        @click.prevent="slideNext()"
+                                    >Next</button> 
                                 </div>
                                 <template v-for="(el, idx) in slides">
                                     <transition :name="`slide-${slideDirection}`">
@@ -150,15 +158,7 @@
                                             </div>
                                         </div>
                                     </transition>
-                                </template>
-                                <button 
-                                    class="carousel__control carousel__control--left" 
-                                    @click.prevent="slidePrev()"
-                                >Prev</button>
-                                <button 
-                                    class="carousel__control carousel__control--right" 
-                                    @click.prevent="slideNext()"
-                                >Next</button>        
+                                </template>       
                             </div>
                         </div>
                     </div>

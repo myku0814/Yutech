@@ -1,7 +1,7 @@
 .section {
     &-about {
         position: relative;
-        padding-top: 27vh;
+        padding-top: 29vh;
         margin-top: -46vh;
         padding-bottom: 3rem;
 
@@ -19,19 +19,19 @@
         }
         
         @include respond("tab-land") {
-            padding-top: 22vh;
+            padding-top: 25vh;
         }
 
-        @include respond("phone") {
-            @supports(clip-path: ellipse(0 0 at 0 0)) or (-webkit-clip-path: ellipse(0 0 at 0 0)) {
-                -webkit-clip-path: url(#waveClip__one-way);
-                clip-path: url(#waveClip__one-way);
-            }
-        }
+        // @include respond("phone") {
+        //     @supports(clip-path: ellipse(0 0 at 0 0)) or (-webkit-clip-path: ellipse(0 0 at 0 0)) {
+        //         -webkit-clip-path: url(#waveClip__one-way);
+        //         clip-path: url(#waveClip__one-way);
+        //     }
+        // }
 
         @include respond("phone") {
-            margin-top: -30vh;
-            padding-top: 7vh;
+            margin-top: -37vh;
+            padding-top: 15vh;
         }
     }
 
