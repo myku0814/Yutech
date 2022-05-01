@@ -522,7 +522,7 @@ body {
   .carousel__inner {
     position: relative;
     width: 100%;
-    height: 68vh;
+    height: 70vh;
     overflow: hidden; }
   .carousel__item {
     position: absolute;
