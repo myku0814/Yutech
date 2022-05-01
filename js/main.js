@@ -150,7 +150,17 @@ Vue.createApp({
             document.querySelector('#navi-toggle + label').click();
             this.toggleFlag(flagKey, evt);
         },
-
+        getCardSpanClass(catagory) {
+            let str = '';
+            if(catagory === 'medical') {
+                str = 'card__details__span_medical';
+            } else if(catagory === 'wearable') {
+                str = 'card__details__span_wearable';
+            } else if(catagory === 'education') {
+                str = 'card__details__span_education';
+            }
+            return str;
+        },
         /* typing */
         typeMainText: function() {
             if(this.mainTextIdx < this.mainTextTypeArray[this.mainTextTypeArrayIdx].length) {

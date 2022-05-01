@@ -460,6 +460,9 @@ body {
   justify-content: space-between; }
   .card:hover {
     transform: translateY(-0.5rem); }
+    @media only screen and (max-width: 37.5em) {
+      .card:hover {
+        transform: none; } }
   .card__img {
     display: block;
     width: 100%;
@@ -504,9 +507,14 @@ body {
     @media only screen and (max-width: 37.5em) {
       .card__details {
         padding: 4rem 2rem 2rem 2rem; } }
-    .card__details span {
-      color: #55c57a;
+    .card__details__span {
       font-weight: 600; }
+      .card__details__span_medical {
+        color: #ff9100; }
+      .card__details__span_wearable {
+        color: #4f816a; }
+      .card__details__span_education {
+        color: #55c57a; }
   .card__btn {
     margin: 0 auto; }
   .card__hidden {

@@ -91,7 +91,10 @@
                                         <span :class="`card__heading-span card__heading-span--${el.catagory}`">{{ el.prodName }}</span>
                                     </h4>
                                     <div class="card__details">
-                                        <span>{{ el.prodName }}</span>
+                                        <span 
+                                            class="card__details__span"
+                                            :class="getCardSpanClass(el.catagory)"
+                                        >{{ el.prodName }}</span>
                                         {{ el.msg }}
                                     </div>
                                     <div class="card__btn">
@@ -151,7 +154,10 @@
                                                     <span :class="`card__heading-span card__heading-span--${el.catagory}`">{{ el.prodName }}</span>
                                                 </h4>
                                                 <div class="card__details">
-                                                    <span>{{ el.prodName }}</span>
+                                                    <span 
+                                                        class="card__details__span"
+                                                        :class="getCardSpanClass(el.catagory)"
+                                                    >{{ el.prodName }}</span>
                                                     {{ el.msg }}
                                                 </div>
                                                 <div class="card__btn">

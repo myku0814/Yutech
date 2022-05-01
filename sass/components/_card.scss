@@ -19,6 +19,10 @@
 
     &:hover {
         transform: translateY(-.5rem);
+
+        @include respond("phone") {
+            transform: none;
+        }
     }
 
     &__img {
@@ -91,9 +95,17 @@
             padding: 4rem 2rem 2rem 2rem;
         }
 
-        & span {
-            color: $color-secondary;
+        &__span {
             font-weight: 600;
+            &_medical {
+                color: $color-tertiary;
+            }
+            &_wearable {
+                color: $color-primary;
+            }
+            &_education {
+                color: $color-secondary;
+            }
         }
     }
 
