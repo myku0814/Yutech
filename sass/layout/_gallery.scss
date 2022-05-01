@@ -9,7 +9,8 @@
     padding: 1.5rem;
 
     @include respond("phone") { 
-        grid-gap: 1rem;
+        grid-gap: .5rem;
+        padding: .5rem;
     }
     &__item {
         &--1 {

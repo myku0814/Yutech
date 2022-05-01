@@ -544,6 +544,7 @@ body {
     color: #fff;
     border: none;
     display: inline-block;
+    border-radius: 1rem;
     cursor: pointer;
     padding: 1rem; }
   .carousel__indicators {
@@ -571,19 +572,19 @@ body {
   transition: all 1s ease-in-out; }
 
 .slide-in-enter-from {
-  transform: translateX(-100%); }
+  transform: translate3D(-100%, 0, 0); }
 
 .slide-in-leave-to {
-  transform: translateX(100%); }
+  transform: translate3D(100%, 0, 0); }
 
 .slide-out-enter-active, .slide-out-leave-active {
   transition: all 1s ease-in-out; }
 
 .slide-out-enter-from {
-  transform: translateX(100%); }
+  transform: translate3D(100%, 0, 0); }
 
 .slide-out-leave-to {
-  transform: translateX(-100%); }
+  transform: translate3D(-100%, 0, 0); }
 
 .bg-video {
   position: absolute;
@@ -725,7 +726,8 @@ body {
   padding: 1.5rem; }
   @media only screen and (max-width: 37.5em) {
     .gallery {
-      grid-gap: 1rem; } }
+      grid-gap: .5rem;
+      padding: .5rem; } }
   .gallery__item--1 {
     grid-row: 1 / span 2;
     grid-column: 1 / span 2; }
@@ -1006,7 +1008,7 @@ body {
       position: fixed;
       top: 6.5rem;
       right: 6.5rem;
-      background-image: radial-gradient(#accac5, #105761);
+      background-image: radial-gradient(rgba(172, 202, 197, 0.9), #105761);
       z-index: 1000;
       transition: transform 0.8s cubic-bezier(0.83, 0, 0.17, 1); } }
   @media only screen and (max-width: 56.25em) and (max-width: 56.25em) {
@@ -1045,14 +1047,15 @@ body {
     .navigation__link:link, .navigation__link:visited {
       display: inline-block;
       font-size: 3rem;
-      font-weight: 300;
+      font-weight: 500;
       padding: 1rem 2rem;
-      color: #fff;
+      color: #300050;
       text-decoration: none;
       text-transform: uppercase;
       background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #fff 50%);
       background-size: 250%;
-      transition: all .4s; }
+      transition: all .4s;
+      border-bottom: 2px solid #ccc; }
     .navigation__link:hover, .navigation__link:active {
       background-position: 100%;
       color: #4f816a;

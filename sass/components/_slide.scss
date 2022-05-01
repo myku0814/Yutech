@@ -21,6 +21,7 @@
         color: $color-white;
         border: none;
         display: inline-block;
+        border-radius: 1rem;
         cursor: pointer;
         padding: 1rem;
         &--left {
@@ -65,10 +66,10 @@
         }
     
         &-enter-from {
-            transform: translateX(-100%);
+            transform: translate3D(-100%, 0, 0);
         }
         &-leave-to {
-            transform: translateX(100%);
+            transform: translate3D(100%, 0, 0);
         }
     }
     &-out {
@@ -78,10 +79,10 @@
         }
     
         &-enter-from {
-            transform: translateX(100%);
+            transform: translate3D(100%, 0, 0);
         }
         &-leave-to {
-            transform: translateX(-100%);
+            transform: translate3D(-100%, 0, 0);
         }
     }
 }

@@ -99,7 +99,7 @@
             position: fixed;
             top: 6.5rem;
             right: 6.5rem;
-            background-image: radial-gradient($color-primary-light, $color-primary-dark);
+            background-image: radial-gradient(rgba($color-primary-light, 0.9), rgba($color-primary-dark, 1));
             z-index: 1000;
             transition: transform .8s cubic-bezier(0.83, 0, 0.17, 1);
     
@@ -148,14 +148,15 @@
             &:visited {
                 display: inline-block;
                 font-size: 3rem;
-                font-weight: 300;
+                font-weight: 500;
                 padding: 1rem 2rem;
-                color: $color-white;
+                color: $color-purple-dark;
                 text-decoration: none;
                 text-transform: uppercase;
                 background-image: linear-gradient(120deg, transparent 0%, transparent 50%, $color-white 50%);
                 background-size: 250%;
                 transition: all .4s;
+                border-bottom: 2px solid $color-grey-light-3;
             }
             
             &:hover,
