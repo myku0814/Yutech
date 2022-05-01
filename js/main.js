@@ -3,20 +3,20 @@ Vue.createApp({
         return {
             author: 'myku',
             galleryPictures: [
-                './img/gal-1.jpeg',
-                './img/gal-2.jpeg',
-                './img/gal-3.jpeg',
-                './img/gal-4.jpeg',
-                './img/gal-5.jpeg',
-                './img/gal-6.jpeg',
-                './img/gal-7.jpeg',
-                './img/gal-8.jpeg',
-                './img/gal-9.jpeg',
-                './img/gal-10.jpeg',
-                './img/gal-11.jpeg',
-                './img/gal-12.jpeg',
-                './img/gal-13.jpeg',
-                './img/gal-14.jpeg'
+                './img/gal-1.jpg',
+                './img/gal-2.jpg',
+                './img/gal-3.jpg',
+                './img/gal-4.jpg',
+                './img/gal-5.jpg',
+                './img/gal-6.jpg',
+                './img/gal-7.jpg',
+                './img/gal-8.jpg',
+                './img/gal-9.jpg',
+                './img/gal-10.jpg',
+                './img/gal-11.jpg',
+                './img/gal-12.jpg',
+                './img/gal-13.jpg',
+                './img/gal-14.jpg'
             ],
             modals: [
                 { name: 'yuguard', src: './img/yuguard_detail.PNG', prodName: '貼心片' },
@@ -46,10 +46,10 @@ Vue.createApp({
                 ]
             ],
             features: [
-                { name: 'home care',  src: './img/fea-1.jpg', icon: 'icon-home', title: '居家照護', msg: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem, tempora nulla! Cum totam accusantium expedita accusamus blanditiis deleniti similique officiis eos, impedit eveniet, fuga aliquid earum facilis quibusdam nostrum eligendi.' },
-                { name: 'real-time monitor',  src: './img/fea-2.jpg', icon: 'icon-tablet', title: '即時監測', msg: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem, tempora nulla! Cum totam accusantium expedita accusamus blanditiis deleniti similique officiis eos, impedit eveniet, fuga aliquid earum facilis quibusdam nostrum eligendi.' },
-                { name: 'high precision diagnostics',  src: './img/fea-3.jpg', icon: 'icon-tools', title: '精準醫療', msg: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem, tempora nulla! Cum totam accusantium expedita accusamus blanditiis deleniti similique officiis eos, impedit eveniet, fuga aliquid earum facilis quibusdam nostrum eligendi.' },
-                { name: 'high privacy security',  src: './img/fea-4.jpg', icon: 'icon-v-card', title: '隱私保障', msg: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem, tempora nulla! Cum totam accusantium expedita accusamus blanditiis deleniti similique officiis eos, impedit eveniet, fuga aliquid earum facilis quibusdam nostrum eligendi.' }
+                { name: 'home care',  src: './img/fea-1.jpg', icon: 'icon-home', title: '居家照護', msg: '裕晶醫學科技秉持著居家照護的概念，將所開發產品與智慧物聯網結合，資料藉由高度安全方式傳送至雲端平台，進行人工智慧網路之計算，用以預測疾病發生可能性，並提早知會使用者的健康問題，提供使用者居家照護的可能。' },
+                { name: 'real-time monitor',  src: './img/fea-2.jpg', icon: 'icon-tablet', title: '即時監測', msg: '裕晶醫學科技產品均有對應APP可以進行醫療追蹤使用，APP能即時將資料從裝置上擷取下來並繪製生理訊號，隨時守護使用者健康。其結合智慧聯網概念，以達到即時檢測結果，並提供直觀易使用操作介面。' },
+                { name: 'high precision diagnostics',  src: './img/fea-3.jpg', icon: 'icon-tools', title: '精準醫療', msg: '裕晶醫學科技之生醫產品均通過醫療安全法規，保證所量測生理訊號的精確性。因此不需要擔心產品是否符合醫療等級，且能提供相關指標檢測結果，使用者獲取後能提供給自己熟悉醫師進行診斷。' },
+                { name: 'high privacy security',  src: './img/fea-4.jpg', icon: 'icon-v-card', title: '隱私保障', msg: '裕晶醫學科技所開發之硬體、韌體、軟體與平台均有進行對應的資安防護。以雲端平台為例，資料上傳時會進行高等級加密並打散敏感資訊，以確保使用者個資不會外洩。因此使用者不必擔心資料不安全的問題。' }
             ],
             waterBtns: [
                 { name: 'YouTube', icon: 'icon-youtube', href: 'https://www.youtube.com/channel/UCDUCtLte-d7foSL4wNmjoEg' },

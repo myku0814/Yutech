@@ -634,7 +634,8 @@ body {
     transform: skewX(12deg); }
     @media only screen and (max-width: 37.5em) {
       .feature-box__label {
-        margin: 1rem auto; } }
+        margin: 1rem auto;
+        width: 50%; } }
   .feature-box__icon {
     height: 3.5rem;
     width: 3.5rem;
@@ -676,7 +677,7 @@ body {
   object-fit: cover;
   transition: all .2s;
   cursor: pointer;
-  border: 2px solid #777;
+  border: 3px ridge #777;
   border-radius: 2rem; }
   .stories__img:hover {
     transform: scale(1.01); }
