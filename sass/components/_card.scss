@@ -90,6 +90,11 @@
         @include respond("phone") {
             padding: 4rem 2rem 2rem 2rem;
         }
+
+        & span {
+            color: $color-secondary;
+            font-weight: 600;
+        }
     }
 
     &__btn {

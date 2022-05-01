@@ -91,6 +91,7 @@
                                         <span :class="`card__heading-span card__heading-span--${el.catagory}`">{{ el.prodName }}</span>
                                     </h4>
                                     <div class="card__details">
+                                        <span>{{ el.prodName }}</span>
                                         {{ el.msg }}
                                     </div>
                                     <div class="card__btn">
@@ -134,7 +135,11 @@
                                             @mouseenter="stopSlideTimer()" 
                                             @mouseout="startSlideTimer()"
                                         >
-                                            <div class="card">
+                                            <div 
+                                                class="card"
+                                                @touchstart="slideTouchStart($event)"
+                                                @touchend="slideTouchEnd($event)"
+                                            >
                                                 <div class="card__img-box">
                                                     <img 
                                                         class="card__img"
@@ -146,6 +151,7 @@
                                                     <span :class="`card__heading-span card__heading-span--${el.catagory}`">{{ el.prodName }}</span>
                                                 </h4>
                                                 <div class="card__details">
+                                                    <span>{{ el.prodName }}</span>
                                                     {{ el.msg }}
                                                 </div>
                                                 <div class="card__btn">
@@ -206,8 +212,8 @@
                             <img src="./img/member.jpg" alt="member" class="stories__img">
                         </div>
                         <div class="stories__details">
-                            裕晶醫學科技(Yutech)創立於2019年，源自於國立成功大學CBIC--通訊暨生物積體電路設計實驗室，致力於生醫系統晶片、生醫穿戴式裝置與手機、雲端平台的開發，以提升人類健康品質為核心目標，因此，裕晶醫學科技推出”貼身守護神”系列產品，將提升人類健康品質這項目標，循序漸進經醫療科技推廣至日常穿戴監控且普及至教育推廣市場，由特定場域普及至普羅大眾以增進人類社會福祉。
-                            裕晶醫學科技擁有系統硬體設計、軟韌體開發技術、物聯網系統整合、AI人工智慧以及系統晶片整合設計等多項前瞻研究技術能力，在兩岸、美國取得40餘種專利技術，可提供客戶客製化系統設計等多項服務，並銷售生醫穿戴系統模組。
+                            <span>裕晶醫學科技(Yutech)</span>創立於2019年，源自於<span>國立成功大學CBIC--通訊暨生物積體電路設計實驗室</span>，致力於<span>生醫系統晶片</span>、<span>生醫穿戴式裝置</span>與<span>手機雲端平台</span>的開發，以提升人類健康品質為核心目標，因此，裕晶醫學科技推出”貼身守護神”系列產品，將提升人類健康品質這項目標，循序漸進經醫療科技推廣至日常穿戴監控且普及至教育推廣市場，由特定場域普及至普羅大眾以增進人類社會福祉。
+                            裕晶醫學科技擁有<span>系統硬體設計</span>、<span>軟韌體開發技術</span>、<span>物聯網系統整合</span>、<span>AI人工智慧</span>以及<span>系統晶片整合設計</span>等多項前瞻研究技術能力，在兩岸、美國取得40餘種專利技術，可提供客戶客製化系統設計等多項服務，並銷售生醫穿戴系統模組。
                         </div>
                     </div>
                 </section>
@@ -232,12 +238,12 @@
             <footer class="footer">
                 <div class="navs">
                     <ul class="nav">
-                        <li class="nav__item"><a href="#" class="nav__link">裕晶醫學科技<br>股份有限公司</a></li>
-                        <li class="nav__item"><a href="#" class="nav__link">臺南市中西區<br>民族路二段153號7樓之4</a></li>
+                        <li class="nav__item"><a @click.prevent="copyText('裕晶醫學科技股份有限公司')" href="#" class="nav__link">裕晶醫學科技<br>股份有限公司</a></li>
+                        <li class="nav__item"><a @click.prevent="copyText('臺南市中西區民族路二段153號7樓之4')" href="#" class="nav__link">臺南市中西區<br>民族路二段153號7樓之4</a></li>
                     </ul>
                     <ul class="nav">
-                        <li class="nav__item"><a href="#" class="nav__link">信箱<br>service@yutechealth.com</a></li>
-                        <li class="nav__item"><a href="#" class="nav__link">電話<br>(06)221-6189</a></li>
+                        <li class="nav__item"><a @click.prevent="copyText('service@yutechealth.com')" href="#" class="nav__link">信箱<br>service@yutechealth.com</a></li>
+                        <li class="nav__item"><a @click.prevent="copyText('(06)221-6189')" href="#" class="nav__link">電話<br>(06)221-6189</a></li>
                     </ul>
                     <ul class="nav nav__icons">
                         <li 
@@ -313,7 +319,7 @@
 
 
 
-
+        <script type="text/javascript" src="node_modules/default-passive-events/dist/index.js"></script>
         <script src="https://unpkg.com/vue@next"></script>
         <script src="./js/main.js"></script>
     </body>

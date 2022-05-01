@@ -504,6 +504,9 @@ body {
     @media only screen and (max-width: 37.5em) {
       .card__details {
         padding: 4rem 2rem 2rem 2rem; } }
+    .card__details span {
+      color: #55c57a;
+      font-weight: 600; }
   .card__btn {
     margin: 0 auto; }
   .card__hidden {
@@ -519,7 +522,7 @@ body {
   .carousel__inner {
     position: relative;
     width: 100%;
-    height: 65vh;
+    height: 68vh;
     overflow: hidden; }
   .carousel__item {
     position: absolute;
@@ -699,6 +702,9 @@ body {
       column-count: 1;
       width: 100%;
       padding: 0 2rem; } }
+  .stories__details span {
+    color: #105761;
+    font-weight: 600; }
 
 .gallery {
   background-color: #f7f7f7;
@@ -791,6 +797,7 @@ body {
     width: 70vw; }
 
 .footer {
+  position: relative;
   background-color: #333;
   display: flex;
   justify-content: center;

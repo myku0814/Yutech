@@ -29,20 +29,20 @@ Vue.createApp({
             ],
             cards: [
                 [
-                    { catagory: 'medical', name: 'yuguard', src: './img/yuguard.png', prodName: '貼心片', msg: '貼心片是一款長時間心律偵測器全天候的心臟單導程監測，貼心守護。' },
-                    { catagory: 'medical', name: 'yusound', src: './img/yusound.png', prodName: '貼心音', msg: '貼心音是一款新型智慧聽診器，心電及心音訊號即時同步顯示，心雜音無所遁形。' },
-                    { catagory: 'medical', name: 'yurine', src: './img/yurine.png', prodName: '尿檢譯', msg: '尿檢譯是一款可攜式無線尿液檢測平台，透過尿液檢測即時翻譯您的生理健康。' }
+                    { catagory: 'medical', name: 'yuguard', src: './img/yuguard.png', prodName: '貼心片', msg: '是一款長時間心律偵測器全天候的心臟單導程監測，貼心守護。' },
+                    { catagory: 'medical', name: 'yusound', src: './img/yusound.png', prodName: '貼心音', msg: '是一款新型智慧聽診器，心電及心音訊號即時同步顯示，心雜音無所遁形。' },
+                    { catagory: 'medical', name: 'yurine', src: './img/yurine.png', prodName: '尿檢譯', msg: '是一款可攜式無線尿液檢測平台，透過尿液檢測即時翻譯您的生理健康。' }
                     
                 ],
                 [
-                    { catagory: 'wearable', name: 'yucloth', src: './img/yucloth.png', prodName: '貼心衣', msg: '貼心衣是一款心律及呼吸監控服飾，提供最方便的量測平台，全天候監控健康。' },
-                    { catagory: 'wearable', name: 'yubelt', src: './img/yubelt.png', prodName: '貼心帶', msg: '貼心帶是一款具醫療解析度之心律監控胸帶，任何動作任何角度，全天候精準監控。' },
-                    { catagory: 'wearable', name: 'yupet', src: './img/yupet.png', prodName: '寵心衣', msg: '寵心衣是一款適用於寵物的心律及溫度監控服飾，讓主人能更貼近與愛寵之間的距離。' }
+                    { catagory: 'wearable', name: 'yucloth', src: './img/yucloth.png', prodName: '貼心衣', msg: '是一款心律及呼吸監控服飾，提供最方便的量測平台，全天候監控健康。' },
+                    { catagory: 'wearable', name: 'yubelt', src: './img/yubelt.png', prodName: '貼心帶', msg: '是一款具醫療解析度之心律監控胸帶，任何動作任何角度，全天候精準監控。' },
+                    { catagory: 'wearable', name: 'yupet', src: './img/yupet.png', prodName: '寵心衣', msg: '是一款適用於寵物的心律及溫度監控服飾，讓主人能更貼近與愛寵之間的距離。' }
                 ],
                 [
-                    { catagory: 'education', name: 'trianswer', src: './img/trianswer.png', prodName: '試穿戴', msg: '試穿戴是一款穿戴式生醫訊號開發平台，藉由小巧的感測積木，構築您創意的城堡。' },
-                    { catagory: 'education', name: 'trianswer', src: './img/trianswer.png', prodName: '試穿戴', msg: '試穿戴是一款穿戴式生醫訊號開發平台，藉由小巧的感測積木，構築您創意的城堡。' },
-                    { catagory: 'education', name: 'trianswer', src: './img/trianswer.png', prodName: '試穿戴', msg: '試穿戴是一款穿戴式生醫訊號開發平台，藉由小巧的感測積木，構築您創意的城堡。' }
+                    { catagory: 'education', name: 'trianswer', src: './img/trianswer.png', prodName: '試穿戴', msg: '是一款穿戴式生醫訊號開發平台，藉由小巧的感測積木，構築您創意的城堡。' },
+                    { catagory: 'education', name: 'trianswer', src: './img/trianswer.png', prodName: '試穿戴', msg: '是一款穿戴式生醫訊號開發平台，藉由小巧的感測積木，構築您創意的城堡。' },
+                    { catagory: 'education', name: 'trianswer', src: './img/trianswer.png', prodName: '試穿戴', msg: '是一款穿戴式生醫訊號開發平台，藉由小巧的感測積木，構築您創意的城堡。' }
                 ]
             ],
             features: [
@@ -78,18 +78,20 @@ Vue.createApp({
 
             /* slide */
             slides: [
-                { catagory: 'medical', name: 'yuguard', src: './img/yuguard.png', prodName: '貼心片', msg: '貼心片是一款長時間心律偵測器全天候的心臟單導程監測，貼心守護。' },
-                { catagory: 'medical', name: 'yusound', src: './img/yusound.png', prodName: '貼心音', msg: '貼心音是一款新型智慧聽診器，心電及心音訊號即時同步顯示，心雜音無所遁形。' },
-                { catagory: 'medical', name: 'yurine', src: './img/yurine.png', prodName: '尿檢譯', msg: '尿檢譯是一款可攜式無線尿液檢測平台，透過尿液檢測即時翻譯您的生理健康。' },
-                { catagory: 'wearable', name: 'yucloth', src: './img/yucloth.png', prodName: '貼心衣', msg: '貼心衣是一款心律及呼吸監控服飾，提供最方便的量測平台，全天候監控健康。' },
-                { catagory: 'wearable', name: 'yubelt', src: './img/yubelt.png', prodName: '貼心帶', msg: '貼心帶是一款具醫療解析度之心律監控胸帶，任何動作任何角度，全天候精準監控。' },
-                { catagory: 'wearable', name: 'yupet', src: './img/yupet.png', prodName: '寵心衣', msg: '寵心衣是一款適用於寵物的心律及溫度監控服飾，讓主人能更貼近與愛寵之間的距離。' },
-                { catagory: 'education', name: 'trianswer', src: './img/trianswer.png', prodName: '試穿戴', msg: '試穿戴是一款穿戴式生醫訊號開發平台，藉由小巧的感測積木，構築您創意的城堡。' }  
+                { catagory: 'medical', name: 'yuguard', src: './img/yuguard.png', prodName: '貼心片', msg: '是一款長時間心律偵測器全天候的心臟單導程監測，貼心守護。' },
+                { catagory: 'medical', name: 'yusound', src: './img/yusound.png', prodName: '貼心音', msg: '是一款新型智慧聽診器，心電及心音訊號即時同步顯示，心雜音無所遁形。' },
+                { catagory: 'medical', name: 'yurine', src: './img/yurine.png', prodName: '尿檢譯', msg: '是一款可攜式無線尿液檢測平台，透過尿液檢測即時翻譯您的生理健康。' },
+                { catagory: 'wearable', name: 'yucloth', src: './img/yucloth.png', prodName: '貼心衣', msg: '是一款心律及呼吸監控服飾，提供最方便的量測平台，全天候監控健康。' },
+                { catagory: 'wearable', name: 'yubelt', src: './img/yubelt.png', prodName: '貼心帶', msg: '是一款具醫療解析度之心律監控胸帶，任何動作任何角度，全天候精準監控。' },
+                { catagory: 'wearable', name: 'yupet', src: './img/yupet.png', prodName: '寵心衣', msg: '是一款適用於寵物的心律及溫度監控服飾，讓主人能更貼近與愛寵之間的距離。' },
+                { catagory: 'education', name: 'trianswer', src: './img/trianswer.png', prodName: '試穿戴', msg: '是一款穿戴式生醫訊號開發平台，藉由小巧的感測積木，構築您創意的城堡。' }  
             ],
             slideDirection: 'in',
             currentSlide: 0,
             slideInterval: null,
-            slideSwitchingSpeed: 5000
+            slideSwitchingSpeed: 5000,
+            slideTouchStartX: 0,
+            slideTouchEndX: 0
         };
     },
 
@@ -105,6 +107,42 @@ Vue.createApp({
     },
 
     methods: {
+        copyText(msg) {
+            const el = document.createElement('textarea');
+        
+            el.setAttribute('readonly', '');
+            el.style.position = 'absolute';
+            el.style.left = '-9999px';
+            el.value = `${msg}`;
+        
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+
+            const toast = document.createElement('div');
+            toast.innerHTML = 'copied!!!'
+            toast.style.position = 'absolute';
+            toast.style.bottom = '1%';
+            toast.style.left = '50%';
+            toast.style.transform = 'translateX(-50%)';
+            toast.style.zIndex = '10';
+            toast.style.width = '10vw';
+            toast.style.width = '10vh';
+            toast.style.backgroundColor = '#00009955';
+            toast.style.color = 'white';
+            toast.style.textAlign = 'center';
+            toast.style.borderRadius = '1rem';
+            toast.style.padding = '1rem';
+            toast.style.transition = 'all .5s';
+            document.getElementsByTagName('footer')[0].appendChild(toast);
+            setTimeout(()=> {
+                toast.style.opacity = 0;
+            }, 200);
+            setTimeout(()=> {
+                document.getElementsByTagName('footer')[0].removeChild(toast);
+            }, 6000);
+        },
         toggleFlag: function(flagKey, evt) {
             this.showModals[flagKey] = !this.showModals[flagKey];
         },
@@ -182,6 +220,19 @@ Vue.createApp({
         },
         stopSlideTimer() {
             clearInterval(this.slideInterval);
-        }
+        },
+        slideTouchStart(evt) {
+            this.slideTouchStartX = evt.changedTouches[0].screenX;
+        },
+        slideTouchEnd(evt) {
+            this.slideTouchEndX = evt.changedTouches[0].screenX;
+            if(this.slideTouchStartX - this.slideTouchEndX > 50) {
+                // swiped left
+                this.slideNext();
+            } else if(this.slideTouchEndX - this.slideTouchStartX > 50) {
+                // swiped right
+                this.slidePrev();
+            }
+        },
     }
 }).mount('#app');
