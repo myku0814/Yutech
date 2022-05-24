@@ -16,6 +16,8 @@
 @import "components/bg-video";
 @import "components/feature-box";
 @import "components/stories";
+@import "components/collapsible";
+@import "components/form";
 
 @import "layout/gallery";
 @import "layout/flex-box";
@@ -24,6 +26,7 @@
 @import "layout/navigation";
 
 @import "pages/home";
+@import "pages/contactUs";
 
 // since using vue
 [v-cloak] {

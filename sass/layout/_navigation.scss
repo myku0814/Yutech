@@ -15,7 +15,7 @@
         align-items: center;
     }
     &__logo-box{
-
+        display: flex;
     }
     &__logo {
         height: 6rem;
@@ -33,6 +33,9 @@
         &:visited {
             display: inline-block;
             font-size: 2rem;
+            @include respond("laptop") {
+                font-size: 1rem;
+            }
             font-weight: 700;
             padding: 1rem 2rem;
             color: $color-primary-dark;
@@ -99,7 +102,7 @@
             position: fixed;
             top: 6.5rem;
             right: 6.5rem;
-            background-image: radial-gradient(rgba($color-primary-light, 0.9), rgba($color-primary-dark, 1));
+            background-image: radial-gradient(rgba($color-primary-light, 1), rgba($color-primary-dark, 1));
             z-index: 1000;
             transition: transform .8s cubic-bezier(0.83, 0, 0.17, 1);
     
@@ -150,7 +153,7 @@
                 font-size: 3rem;
                 font-weight: 500;
                 padding: 1rem 2rem;
-                color: $color-purple-dark;
+                color: $color-white;
                 text-decoration: none;
                 text-transform: uppercase;
                 background-image: linear-gradient(120deg, transparent 0%, transparent 50%, $color-white 50%);

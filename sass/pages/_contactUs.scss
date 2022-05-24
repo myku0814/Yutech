@@ -1,0 +1,131 @@
+.land {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100vh;
+    background-image: 
+        linear-gradient(
+            to right bottom, 
+            rgba($color-purple-light, .1),
+            rgba($color-purple-dark, .1)
+        ), 
+        url(../../img/home_cover.png);
+    background-size: cover;
+    background-position: left;
+    background-color: $color-white;
+}
+.contactUs {
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    
+    &__title {
+        padding-top: 1rem;
+        margin-top: 6rem;
+        @include respond("phone") {
+            margin-top: 1rem;
+        }
+    }
+    &__QRcodes {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        @include respond("phone") {
+            flex-direction: column;
+        }
+    }
+    &__QRcode {
+        width: calc(min(20vw, 40vh));
+        @include respond("phone") {
+            width: 40vw;
+        }
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &-imgBox {
+
+        }
+        &-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            border-radius: 10px;
+            @include respond("phone") {
+                margin-bottom: 6rem;
+            }
+            background-image: 
+                linear-gradient(
+                    to right bottom, 
+                    rgba($color-purple-light, 0.1),
+                    rgba($color-purple-dark, 0.1)
+                ), 
+                url(../../img/favicon_cover.png);
+            background-size: cover;
+            background-position: center;
+            background-color: $color-white;
+        }
+        &-text {
+            cursor: default;
+            font-weight: 500;
+            font-size: 2rem;
+            color: $color-grey-light-2;
+            background-color: rgba($color-primary, .5);
+            border-radius: 4px;
+            padding: 1rem;
+            margin-bottom: 2rem;
+        }
+    }
+}
+
+.book {
+    background-image: 
+        linear-gradient(105deg, 
+            rgba($color-bg-1, .9) 0%, 
+            rgba($color-bg-1, .9) 50%, 
+            transparent 50%
+        ), 
+        url(../../img/prod_preview/trianswer.png);
+    background-size: 100%;
+    background-position: center;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .2);
+
+
+    @include respond("tab-land") {
+        background-image: 
+        linear-gradient(100deg, 
+            rgba($color-bg-1, .9) 0%, 
+            rgba($color-bg-1, .9) 65%, 
+            transparent 65%
+        ), 
+        url(../../img/prod_preview/trianswer.png);
+        background-position: center;
+        background-size: cover;
+    }
+
+    @include respond("tab-port") {
+        background-image: 
+        linear-gradient(to right, 
+            rgba($color-bg-1, .9) 0%, 
+            rgba($color-bg-1, .9) 100%
+        ), 
+        url(../../img/prod_preview/trianswer.png);
+        background-position: center;
+        background-size: cover;
+    }
+
+    &__form {
+        width: 50%;
+        padding: 2rem;
+
+        @include respond("tab-land") {
+            width: 65%;
+        }
+
+        @include respond("tab-port") {
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,42 @@
+.collapsible {
+    &__btn {
+        font-weight: 700;
+        font-size: 2rem;
+        background-color: $color-grey-dark-1;
+        color: $color-white;
+        cursor: pointer;
+        padding: 3rem;
+        width: 100%;
+        
+        border: none;
+        
+        text-align: left;
+        outline: none;
+        margin-bottom: 1px;
+        
+        &:hover {
+            background-color: $color-grey-dark-2;
+        }
+        &::after {
+            content: '\002B'; /* Unicode character for "plus" sign (+) */
+            color: $color-white;
+            font-weight: bold;
+            float: right;
+            margin-left: 1rem;
+        }
+    }
+    &__content {
+        padding: 0; // y cannot assign padding, we cause cannnot fold
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+        background-color: $color-grey-light-3;
+    }
+    &__active {
+        background-color: $color-grey-dark-1;
+        &::after {
+            content: "\2212"; /* Unicode character for "minus" sign (-) */
+        }
+    }
+
+}
