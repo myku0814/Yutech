@@ -320,11 +320,28 @@ Vue.createApp({
                 console.log(`data2send[${key}] is: ${data2send[key]}`);
             });
 
+            // after copy the data to tmp, we can clean the data
             this.cleanAllTheInputs();
 
-            // sanitize
-            // post request
+            // sanitize and post request
+            this.post(
+                '/mail.php',
+                data2send
+            );
+        },
+        post(url, data) {
+            e.preventDefault();
+            try {
+                const rawResponse = await fetch(url, {
+                    method: 'POST',
+                    body: data
+                });
+                console.log('email AJAX');
+                const content = await rawResponse.json();
+                console.log(content);
+            } catch(err) {
+                console.log(err);
+            }
         }
-
     }
 }).mount('#app');
