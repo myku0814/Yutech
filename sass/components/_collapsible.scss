@@ -13,6 +13,7 @@
         text-align: left;
         outline: none;
         margin-bottom: 1px;
+        transition: all .5s ease-out;
         
         &:hover {
             background-color: $color-grey-dark-2;
@@ -29,7 +30,7 @@
         padding: 0; // y cannot assign padding, we cause cannnot fold
         max-height: 0;
         overflow: hidden;
-        transition: max-height 0.2s ease-out;
+        transition: all .5s ease-out;
         background-color: $color-grey-light-3;
     }
     &__active {

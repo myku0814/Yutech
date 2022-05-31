@@ -23,7 +23,7 @@
         padding-top: 1rem;
         margin-top: 6rem;
         @include respond("phone") {
-            margin-top: 1rem;
+            margin: 1rem !important;
         }
     }
     &__QRcodes {
@@ -37,7 +37,7 @@
     &__QRcode {
         width: calc(min(20vw, 40vh));
         @include respond("phone") {
-            width: 40vw;
+            width: 30vw;
         }
         display: flex;
         justify-content: center;
@@ -52,9 +52,6 @@
             align-items: center;
             padding: 2rem;
             border-radius: 10px;
-            @include respond("phone") {
-                margin-bottom: 6rem;
-            }
             background-image: 
                 linear-gradient(
                     to right bottom, 

@@ -261,7 +261,7 @@ Vue.createApp({
             }
         },
         toggleCollapsible(evt) {
-            const target = evt.target; // collapsible btn
+            let target = evt.target; // collapsible btn
             const content = target.nextElementSibling; // collapsible content
             const isActive = content.style.maxHeight;
 
@@ -273,9 +273,41 @@ Vue.createApp({
                 }
             });
             this.cleanAllTheInputs();
+
+            
             if(!isActive) {
                 target.classList.toggle('collapsible__active');
                 content.style.maxHeight = content.scrollHeight + 'px';
+
+                // get target real position
+                Array.from(document.getElementsByClassName('collapsible__btn')).forEach((ele) => {
+                    if(target.id === ele.id) {
+                        target = ele;
+                    }
+                });
+                // vertical scroll to specific element
+                const self = this;
+                setTimeout(() => {
+                    window.scrollTo({
+                        top: self.findClickElementPosition(document.getElementById(target.id)),
+                        left: 0,
+                        behavior: 'smooth'
+                    });                        
+                }, 500);
+            }
+        },
+        findClickElementPosition(ele) {
+            let curtop = 0;
+            if (ele.offsetParent) {
+                do {
+                    curtop += ele.offsetTop;
+                } while (ele == ele.offsetParent);
+                return [
+                    // (ele.offsetParent.offsetWidth <= 600) ?
+                    // curtop :
+                    // curtop - ele.offsetParent.offsetHeight * 0.05
+                    curtop
+                ];
             }
         },
         cleanAllTheInputs() {
@@ -290,14 +322,14 @@ Vue.createApp({
             });
         },
         sendContactUsEmail(el) {
-            const prodIdx = document.querySelector('input[name="prodSelect"]:checked');
+            const prodName = document.querySelector('input[name="prodSelect"]:checked');
             const piece = document.getElementById(`${el.label}_piece`);
             const name = document.getElementById(`${el.label}_name`);
             const email = document.getElementById(`${el.label}_email`);
             const phone = document.getElementById(`${el.label}_phone`);
             const message = document.getElementById(`${el.label}_message`);
             const data2send = {
-                prodIdx: (prodIdx !== null)? prodIdx.value : '', 
+                prodName: (prodName !== null)? prodName.value : '', 
                 piece: (piece !== null)? piece.value : '', 
                 name: (name !== null)? name.value : '', 
                 email: (email !== null)? email.value : '', 
@@ -311,7 +343,7 @@ Vue.createApp({
 
             } else if(el.title === '聯絡我們&合作商案') {
                 delete data2send.piece;
-                delete data2send.prodIdx;
+                delete data2send.prodName;
             } else {
                 console.log('Contact us by email failed(default)');
             }
@@ -329,8 +361,7 @@ Vue.createApp({
                 data2send
             );
         },
-        post(url, data) {
-            e.preventDefault();
+        async post(url, data) {
             try {
                 const rawResponse = await fetch(url, {
                     method: 'POST',

@@ -61,7 +61,7 @@
                 <ul class="bubbles">
                     <li v-for="idx in 10" :key="idx"></li>
                 </ul>
-                <div class= "u-center-text u-margin-bottom-medium u-padding-top-medium contactUs__title">
+                <div class= "u-center-text u-margin-bottom-medium contactUs__title">
                     <h2 class="heading-secondary heading-secondary--dark">聯絡我們</h2>
                 </div>
                 <div class="contactUs__QRcodes u-margin-bottom-small">
@@ -86,11 +86,11 @@
                     v-for="(el, i) in contacts"
                     :key="i"
                 >
-                    <button class="collapsible__btn" @click.prevent="toggleCollapsible($event)">{{ el.title }}</button>
+                    <button class="collapsible__btn" @click.prevent="toggleCollapsible($event)" :id="`${el.label}_btn`">{{ el.title }}</button>
                     <div class="collapsible__content">
                         <div class="book">
                             <div class="book__form">
-                                <form action="#" class="form" id="`${el.label}_form`">
+                                <form action="#" class="form" :id="`${el.label}_form`">
                                     <div class="form__group" v-if="el.label !== 'contact3'">
                                         <div 
                                             class="form__radio-group" 
