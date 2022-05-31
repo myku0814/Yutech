@@ -352,14 +352,18 @@ Vue.createApp({
                 console.log(`data2send[${key}] is: ${data2send[key]}`);
             });
 
-            // after copy the data to tmp, we can clean the data
-            this.cleanAllTheInputs();
+            if(data2send.email !== '' && data2send.name !== '' && data2send.phone !== '') {
+                // after copy the data to tmp, we can clean the data
+                this.cleanAllTheInputs();
 
-            // sanitize and post request
-            this.post(
-                '/mail.php',
-                data2send
-            );
+                // sanitize and post request
+                this.post(
+                    '/mail.php',
+                    data2send
+                );
+            } else {
+                alert("信箱/名字/電話 => 不可為空!!");
+            }
         },
         async post(url, data) {
             try {
