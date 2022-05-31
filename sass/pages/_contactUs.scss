@@ -116,7 +116,7 @@
     &__form {
         width: 50%;
         padding: 2rem;
-
+        font-family: monospace;
         @include respond("tab-land") {
             width: 65%;
         }

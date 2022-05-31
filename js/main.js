@@ -365,11 +365,14 @@ Vue.createApp({
             try {
                 const rawResponse = await fetch(url, {
                     method: 'POST',
-                    body: data
+                    body: JSON.stringify(data)
                 });
                 console.log('email AJAX');
                 const content = await rawResponse.json();
                 console.log(content);
+                if(rawResponse.status === 200) {
+                    alert("寄送成功!!!!");
+                }
             } catch(err) {
                 console.log(err);
             }
