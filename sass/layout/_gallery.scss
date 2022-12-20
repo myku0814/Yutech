@@ -13,6 +13,20 @@
         padding: .5rem;
     }
     &__item {
+        position: relative;
+        cursor: pointer;
+        &:hover::after {
+            border: ridge 2px green;
+            transition: .1s ease-in-out;
+            content: "";
+            width: calc(100% + 10px);
+            height: calc(100% + 10px);
+            position: absolute;
+            top: 0;
+            left: 0;  
+            transform: translate3d(-5px, -5px, 0);
+        }
+
         &--1 {
             grid-row: 1 / span 2;
             grid-column: 1 / span 2;

@@ -1,7 +1,7 @@
 .feature-box {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     padding: 4rem;
 
     @include respond("tab-port") { 
@@ -28,23 +28,28 @@
 
     &__word-box {
         flex-basis: 60%;
-        padding: 2rem;
+        padding: 0 2rem;
+        @include respond("phone") { 
+            padding: 2rem 0 0 0;
+        }
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: stretch;
     }
 
-
     &__label {
-        margin: 1rem;
+        margin-bottom: 1rem;
         display: flex;
         justify-content: center;
         align-items: center;
         background-color: $color-white;
-        width: 40%;
-        transform: skewX(12deg);
-
-        @include respond("phone") { 
-            margin: 1rem auto;
-            width: 50%;
-        }
+        // width: 30%;
+        // transform: skewX(12deg);
+        // @include respond("phone") { 
+        //     margin: 1rem auto;
+        //     width: 50%;
+        // }
     }
 
     &__icon {
@@ -52,11 +57,12 @@
         width: 3.5rem;
         fill: $color-primary;
         margin: 1rem;
-        transform: skewX(-12deg);
+        // transform: skewX(-12deg);
     }
 
     &__title {
-        transform: skewX(-12deg);
+        margin: 1rem;
+        // transform: skewX(-12deg);
     }
 
     &__text {

@@ -3,29 +3,29 @@ Vue.createApp({
         return {
             author: 'myku',
             galleryPictures: [
-                './img/gal/gal-1.jpg',
-                './img/gal/gal-2.jpg',
-                './img/gal/gal-3.jpg',
-                './img/gal/gal-4.jpg',
-                './img/gal/gal-5.jpg',
-                './img/gal/gal-6.jpg',
-                './img/gal/gal-7.jpg',
-                './img/gal/gal-8.jpg',
-                './img/gal/gal-9.jpg',
-                './img/gal/gal-10.jpg',
-                './img/gal/gal-11.jpg',
-                './img/gal/gal-12.jpg',
-                './img/gal/gal-13.jpg',
-                './img/gal/gal-14.jpg'
+                './img/gal/gal-1.webp',
+                './img/gal/gal-2.webp',
+                './img/gal/gal-3.webp',
+                './img/gal/gal-4.webp',
+                './img/gal/gal-5.webp',
+                './img/gal/gal-6.webp',
+                './img/gal/gal-7.webp',
+                './img/gal/gal-8.webp',
+                './img/gal/gal-9.webp',
+                './img/gal/gal-10.webp',
+                './img/gal/gal-11.webp',
+                './img/gal/gal-12.webp',
+                './img/gal/gal-13.webp',
+                './img/gal/gal-14.webp'
             ],
             modals: [
-                { name: 'yuguard', src: './img/DM/yuguard_detail.PNG', prodName: '貼心片' },
-                { name: 'yusound', src: './img/DM/yusound_detail.PNG', prodName: '貼心音' },
-                { name: 'yurine', src: './img/DM/yurine_detail.PNG', prodName: '尿檢譯' },
-                { name: 'yucloth', src: './img/DM/yucloth_detail.PNG', prodName: '貼心衣' },
-                { name: 'yubelt', src: './img/DM/yubelt_detail.PNG',  prodName: '貼心帶' },
-                { name: 'yupet', src: './img/DM/yupet_detail.PNG', prodName: '寵心衣' },
-                { name: 'trianswer', src: './img/DM/trianswer_detail.PNG', prodName: '試穿戴' }
+                { name: 'yuguard', src: './img/DM/yuguard_detail.webp', prodName: '貼心片' },
+                { name: 'yusound', src: './img/DM/yusound_detail.webp', prodName: '貼心音' },
+                { name: 'yurine', src: './img/DM/yurine_detail.webp', prodName: '尿檢譯' },
+                { name: 'yucloth', src: './img/DM/yucloth_detail.webp', prodName: '貼心衣' },
+                { name: 'yubelt', src: './img/DM/yubelt_detail.webp',  prodName: '貼心帶' },
+                { name: 'yupet', src: './img/DM/yupet_detail.webp', prodName: '寵心衣' },
+                { name: 'trianswer', src: './img/DM/trianswer_detail.webp', prodName: '試穿戴' }
             ],
             cards: [
                 [
@@ -46,10 +46,10 @@ Vue.createApp({
                 ]
             ],
             features: [
-                { name: 'home care',  src: './img/fea/fea-1.jpg', icon: 'icon-home', title: '居家照護', msg: '裕晶醫學科技秉持著居家照護的概念，將所開發產品與智慧物聯網結合，資料藉由高度安全方式傳送至雲端平台，進行人工智慧網路之計算，用以預測疾病發生可能性，並提早知會使用者的健康問題，提供使用者居家照護的可能。' },
-                { name: 'real-time monitor',  src: './img/fea/fea-2.jpg', icon: 'icon-tablet', title: '即時監測', msg: '裕晶醫學科技產品均有對應APP可以進行醫療追蹤使用，APP能即時將資料從裝置上擷取下來並繪製生理訊號，隨時守護使用者健康。其結合智慧聯網概念，以達到即時檢測結果，並提供直觀易使用操作介面。' },
-                { name: 'high precision diagnostics',  src: './img/fea/fea-3.jpg', icon: 'icon-tools', title: '精準醫療', msg: '裕晶醫學科技之生醫產品均通過醫療安全法規，保證所量測生理訊號的精確性。因此不需要擔心產品是否符合醫療等級，且能提供相關指標檢測結果，使用者獲取後能提供給自己熟悉醫師進行診斷。' },
-                { name: 'high privacy security',  src: './img/fea/fea-4.jpg', icon: 'icon-v-card', title: '隱私保障', msg: '裕晶醫學科技所開發之硬體、韌體、軟體與平台均有進行對應的資安防護。以雲端平台為例，資料上傳時會進行高等級加密並打散敏感資訊，以確保使用者個資不會外洩。因此使用者不必擔心資料不安全的問題。' }
+                { name: 'home care',  src: './img/fea/fea-1.webp', icon: 'icon-home', title: '居家照護', msg: '裕晶醫學科技秉持著居家照護的概念，將所開發產品與智慧物聯網結合，資料藉由高度安全方式傳送至雲端平台，進行人工智慧網路之計算，用以預測疾病發生可能性，並提早知會使用者的健康問題，提供使用者居家照護的可能。' },
+                { name: 'real-time monitor',  src: './img/fea/fea-2.webp', icon: 'icon-tablet', title: '即時監測', msg: '裕晶醫學科技產品均有對應APP可以進行醫療追蹤使用，APP能即時將資料從裝置上擷取下來並繪製生理訊號，隨時守護使用者健康。其結合智慧聯網概念，以達到即時檢測結果，並提供直觀易使用操作介面。' },
+                { name: 'high precision diagnostics',  src: './img/fea/fea-3.webp', icon: 'icon-tools', title: '精準醫療', msg: '裕晶醫學科技之生醫產品均通過醫療安全法規，保證所量測生理訊號的精確性。因此不需要擔心產品是否符合醫療等級，且能提供相關指標檢測結果，使用者獲取後能提供給自己熟悉醫師進行診斷。' },
+                { name: 'high privacy security',  src: './img/fea/fea-4.webp', icon: 'icon-v-card', title: '隱私保障', msg: '裕晶醫學科技所開發之硬體、韌體、軟體與平台均有進行對應的資安防護。以雲端平台為例，資料上傳時會進行高等級加密並打散敏感資訊，以確保使用者個資不會外洩。因此使用者不必擔心資料不安全的問題。' }
             ],
             waterBtns: [
                 { name: 'YouTube', icon: 'icon-youtube', href: 'https://www.youtube.com/channel/UCDUCtLte-d7foSL4wNmjoEg' },
