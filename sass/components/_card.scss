@@ -34,8 +34,9 @@
         }
         object-fit: cover;
         // &-box {
-        //     height: 100%;
+            
         // }
+        background-color: rgb(228, 228, 228);
         border-top-left-radius: 2rem;
         border-top-right-radius: 2rem;
     }
@@ -82,6 +83,22 @@
                 rgba($color-secondary-dark, .85)
             );
         }
+
+        &--factory {
+            background-image: 
+                linear-gradient(to right bottom, 
+                rgba($color-quaternary-light, .85), 
+                rgba($color-quaternary-dark, .85)
+            );
+        }
+
+        &--develop {
+            background-image: 
+                linear-gradient(to right bottom, 
+                rgba($color-grey-dark-3, .85), 
+                rgba($color-grey-dark-1, .85)
+            );
+        }
     }
 
     &__details {
@@ -90,7 +107,7 @@
             padding: 4rem 2rem 2rem 2rem;
         }
         color: $color-primary-dark;
-        padding: 6rem 3rem 3rem 3rem;
+        padding: 6rem 2rem 3rem 2rem;
         @include respond("phone") {
             padding: 4rem 2rem 2rem 2rem;
         }
@@ -105,6 +122,12 @@
             }
             &_education {
                 color: $color-secondary;
+            }
+            &_factory {
+                color: $color-quaternary;
+            }
+            &_develop {
+                color: $color-grey-dark-2;
             }
         }
     }

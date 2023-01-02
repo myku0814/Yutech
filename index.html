@@ -14,13 +14,14 @@
         <link rel="stylesheet" href="css/style.css">
         <link rel="shortcut icon" type="image/png" href="img/favicon.png">
         
-        <link rel="preload" as="image" href="./img/DM/yuguard_detail.webp" />
-        <link rel="preload" as="image" href="./img/DM/yusound_detail.webp" />
-        <link rel="preload" as="image" href="./img/DM/yurine_detail.webp" />
-        <link rel="preload" as="image" href="./img/DM/yucloth_detail.webp" />
-        <link rel="preload" as="image" href="./img/DM/yubelt_detail.webp" />
-        <link rel="preload" as="image" href="./img/DM/yupet_detail.webp" />
-        <link rel="preload" as="image" href="./img/DM/trianswer_detail.webp" />
+        <link rel="preload" as="image" href="./img/prod_preview/yuguard.webp" />
+        <link rel="preload" as="image" href="./img/prod_preview/yusound.webp" />
+        <link rel="preload" as="image" href="./img/prod_preview/yurine.webp" />
+        <link rel="preload" as="image" href="./img/prod_preview/yucloth.webp" />
+        <link rel="preload" as="image" href="./img/prod_preview/yubelt.webp" />
+        <link rel="preload" as="image" href="./img/prod_preview/yupet.webp" />
+        <link rel="preload" as="image" href="./img/prod_preview/trianswer.webp" />
+        <link rel="preload" as="image" href="./img/prod_preview/yucbm.webp" />
 
         <title>Yutech | 裕晶醫學科技</title>
     </head>
@@ -95,7 +96,6 @@
                                     class="card"
                                     v-for="(el, idx) in row" 
                                     :key="`card-${row_idx}-${idx}`"
-                                    :class="{ card__hidden: row_idx==2 && (idx==1 || idx==2) }"
                                 >
                                     <div class="card__img-box">
                                         <img 
@@ -211,7 +211,7 @@
                             >
                         </div>
                         <div class="feature-box__word-box">
-                            <div class="feature-box__label rainbow">
+                            <div class="feature-box__label">
                                 <svg class="feature-box__icon">
                                     <use :xlink:href="`img/sprite.svg#${el.icon}`"></use>
                                 </svg>
@@ -232,7 +232,7 @@
                     </svg>
                     <div class="stories__box">
                         <div class="stories__img-box">
-                            <img src="./img/member.jpg" alt="member" class="stories__img">
+                            <img src="./img/member.webp" alt="member" class="stories__img">
                         </div>
                         <div class="stories__details">
                             <span>裕晶醫學科技(Yutech)</span>創立於2019年，源自於<span>國立成功大學CBIC--通訊暨生物積體電路設計實驗室</span>，致力於<span>生醫系統晶片</span>、<span>生醫穿戴式裝置</span>與<span>手機雲端平台</span>的開發，以提升人類健康品質為核心目標，因此，裕晶醫學科技推出”貼身守護神”系列產品，將提升人類健康品質這項目標，循序漸進經醫療科技推廣至日常穿戴監控且普及至教育推廣市場，由特定場域普及至普羅大眾以增進人類社會福祉。
@@ -286,7 +286,7 @@
                 
                 <div class="copyright">
                     <div class="copyright__logo-box">
-                        <img src="img/logo.jpg" alt="Logo" class="copyright__logo">
+                        <img src="img/logo_white.png" alt="Logo" class="copyright__logo">
                     </div>
                     <div class="copyright__text">
                         &copy; Copyright 2022 Yutech Corp. by myku. All right reserved.

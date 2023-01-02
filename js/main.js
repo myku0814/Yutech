@@ -25,24 +25,25 @@ Vue.createApp({
                 { name: 'yucloth', src: './img/DM/yucloth_detail.webp', prodName: '貼心衣' },
                 { name: 'yubelt', src: './img/DM/yubelt_detail.webp',  prodName: '貼心帶' },
                 { name: 'yupet', src: './img/DM/yupet_detail.webp', prodName: '寵心衣' },
-                { name: 'trianswer', src: './img/DM/trianswer_detail.webp', prodName: '試穿戴' }
+                { name: 'trianswer', src: './img/DM/trianswer_detail.webp', prodName: '試穿戴' },
+                { name: 'yucbm', src: './img/DM/yucbm_detail.webp', prodName: '檢備譯' }
             ],
             cards: [
                 [
-                    { catagory: 'medical', name: 'yuguard', src: './img/prod_preview/yuguard.png', prodName: '貼心片', msg: '是一款長時間心律偵測器全天候的心臟單導程監測，貼心守護。' },
-                    { catagory: 'medical', name: 'yusound', src: './img/prod_preview/yusound.png', prodName: '貼心音', msg: '是一款新型智慧聽診器，心電及心音訊號即時同步顯示，心雜音無所遁形。' },
-                    { catagory: 'medical', name: 'yurine', src: './img/prod_preview/yurine.png', prodName: '尿檢譯', msg: '是一款可攜式無線尿液檢測平台，透過尿液檢測即時翻譯您的生理健康。' }
+                    { catagory: 'medical', name: 'yuguard', src: './img/prod_preview/yuguard.webp', prodName: '貼心片', msg: '是一款長時間心律偵測器全天候的心臟單導程監測，貼心守護。' },
+                    { catagory: 'medical', name: 'yusound', src: './img/prod_preview/yusound.webp', prodName: '貼心音', msg: '是一款新型智慧聽診器，心電及心音訊號即時同步顯示，心雜音無所遁形。' },
+                    { catagory: 'medical', name: 'yurine', src: './img/prod_preview/yurine.webp', prodName: '尿檢譯', msg: '是一款可攜式無線尿液檢測平台，透過尿液檢測即時翻譯您的生理健康。' }
                     
                 ],
                 [
-                    { catagory: 'wearable', name: 'yucloth', src: './img/prod_preview/yucloth.png', prodName: '貼心衣', msg: '是一款心律及呼吸監控服飾，提供最方便的量測平台，全天候監控健康。' },
-                    { catagory: 'wearable', name: 'yubelt', src: './img/prod_preview/yubelt.png', prodName: '貼心帶', msg: '是一款具醫療解析度之心律監控胸帶，任何動作任何角度，全天候精準監控。' },
-                    { catagory: 'wearable', name: 'yupet', src: './img/prod_preview/yupet.png', prodName: '寵心衣', msg: '是一款適用於寵物的心律及溫度監控服飾，讓主人能更貼近與愛寵之間的距離。' }
+                    { catagory: 'wearable', name: 'yucloth', src: './img/prod_preview/yucloth.webp', prodName: '貼心衣', msg: '是一款心律及呼吸監控服飾，提供最方便的量測平台，全天候監控健康。' },
+                    { catagory: 'wearable', name: 'yubelt', src: './img/prod_preview/yubelt.webp', prodName: '貼心帶', msg: '是一款具醫療解析度之心律監控胸帶，任何動作任何角度，全天候精準監控。' },
+                    { catagory: 'wearable', name: 'yupet', src: './img/prod_preview/yupet.webp', prodName: '寵心衣', msg: '是一款適用於寵物的心律及溫度監控服飾，讓主人能更貼近與愛寵之間的距離。' }
                 ],
                 [
-                    { catagory: 'education', name: 'trianswer', src: './img/prod_preview/trianswer.png', prodName: '試穿戴', msg: '是一款穿戴式生醫訊號開發平台，藉由小巧的感測積木，構築您創意的城堡。' },
-                    { catagory: 'education', name: 'trianswer', src: './img/prod_preview/trianswer.png', prodName: '試穿戴', msg: '是一款穿戴式生醫訊號開發平台，藉由小巧的感測積木，構築您創意的城堡。' },
-                    { catagory: 'education', name: 'trianswer', src: './img/prod_preview/trianswer.png', prodName: '試穿戴', msg: '是一款穿戴式生醫訊號開發平台，藉由小巧的感測積木，構築您創意的城堡。' }
+                    { catagory: 'education', name: 'trianswer', src: './img/prod_preview/trianswer.webp', prodName: '試穿戴', msg: '是一款穿戴式生醫訊號開發平台，藉由小巧的感測積木，構築您創意的城堡。' },
+                    { catagory: 'factory', name: 'yucbm', src: './img/prod_preview/yucbm.webp', prodName: '檢備譯', msg: '是一款可客製的檢測與轉譯系統。藉由感測、資料整合，監控您工廠的設備。' },
+                    // { catagory: 'develop', name: 'develop', src: './img/prod_preview/develop.webp', prodName: '開發中', msg: '' }
                 ]
             ],
             features: [
@@ -62,7 +63,8 @@ Vue.createApp({
                 yucloth: false,
                 yubelt: false,
                 yupet: false,
-                trianswer: false
+                trianswer: false,
+                yucbm: false
             },
 
             /* typing */
@@ -78,13 +80,14 @@ Vue.createApp({
 
             /* slide */
             slides: [
-                { catagory: 'medical', name: 'yuguard', src: './img/prod_preview/yuguard.png', prodName: '貼心片', msg: '是一款長時間心律偵測器全天候的心臟單導程監測，貼心守護。' },
-                { catagory: 'medical', name: 'yusound', src: './img/prod_preview/yusound.png', prodName: '貼心音', msg: '是一款新型智慧聽診器，心電及心音訊號即時同步顯示，心雜音無所遁形。' },
-                { catagory: 'medical', name: 'yurine', src: './img/prod_preview/yurine.png', prodName: '尿檢譯', msg: '是一款可攜式無線尿液檢測平台，透過尿液檢測即時翻譯您的生理健康。' },
-                { catagory: 'wearable', name: 'yucloth', src: './img/prod_preview/yucloth.png', prodName: '貼心衣', msg: '是一款心律及呼吸監控服飾，提供最方便的量測平台，全天候監控健康。' },
-                { catagory: 'wearable', name: 'yubelt', src: './img/prod_preview/yubelt.png', prodName: '貼心帶', msg: '是一款具醫療解析度之心律監控胸帶，任何動作任何角度，全天候精準監控。' },
-                { catagory: 'wearable', name: 'yupet', src: './img/prod_preview/yupet.png', prodName: '寵心衣', msg: '是一款適用於寵物的心律及溫度監控服飾，讓主人能更貼近與愛寵之間的距離。' },
-                { catagory: 'education', name: 'trianswer', src: './img/prod_preview/trianswer.png', prodName: '試穿戴', msg: '是一款穿戴式生醫訊號開發平台，藉由小巧的感測積木，構築您創意的城堡。' }  
+                { catagory: 'medical', name: 'yuguard', src: './img/prod_preview/yuguard.webp', prodName: '貼心片', msg: '是一款長時間心律偵測器全天候的心臟單導程監測，貼心守護。' },
+                { catagory: 'medical', name: 'yusound', src: './img/prod_preview/yusound.webp', prodName: '貼心音', msg: '是一款新型智慧聽診器，心電及心音訊號即時同步顯示，心雜音無所遁形。' },
+                { catagory: 'medical', name: 'yurine', src: './img/prod_preview/yurine.webp', prodName: '尿檢譯', msg: '是一款可攜式無線尿液檢測平台，透過尿液檢測即時翻譯您的生理健康。' },
+                { catagory: 'wearable', name: 'yucloth', src: './img/prod_preview/yucloth.webp', prodName: '貼心衣', msg: '是一款心律及呼吸監控服飾，提供最方便的量測平台，全天候監控健康。' },
+                { catagory: 'wearable', name: 'yubelt', src: './img/prod_preview/yubelt.webp', prodName: '貼心帶', msg: '是一款具醫療解析度之心律監控胸帶，任何動作任何角度，全天候精準監控。' },
+                { catagory: 'wearable', name: 'yupet', src: './img/prod_preview/yupet.webp', prodName: '寵心衣', msg: '是一款適用於寵物的心律及溫度監控服飾，讓主人能更貼近與愛寵之間的距離。' },
+                { catagory: 'education', name: 'trianswer', src: './img/prod_preview/trianswer.webp', prodName: '試穿戴', msg: '是一款穿戴式生醫訊號開發平台，藉由小巧的感測積木，構築您創意的城堡。' }, 
+                { catagory: 'factory', name: 'yucbm', src: './img/prod_preview/yucbm.webp', prodName: '檢備譯', msg: '是一款可客製的檢測與轉譯系統。藉由感測、資料整合，監控您工廠的設備。' },
             ],
             slideDirection: 'in',
             currentSlide: 0,
@@ -101,7 +104,8 @@ Vue.createApp({
                 { catagory: 'wearable', name: 'yucloth', prodName: '貼心衣' },
                 { catagory: 'wearable', name: 'yubelt', prodName: '貼心帶' },
                 { catagory: 'wearable', name: 'yupet', prodName: '寵心衣' },
-                { catagory: 'education', name: 'trianswer', prodName: '試穿戴' }
+                { catagory: 'education', name: 'trianswer', prodName: '試穿戴' },
+                { catagory: 'factory', name: 'yucbm', prodName: '檢備譯' }
             ],
             contacts: [
                 { label: 'contact1', title: '產品諮詢' },
@@ -161,6 +165,7 @@ Vue.createApp({
         },
         toggleFlag: function(flagKey, evt) {
             this.showModals[flagKey] = !this.showModals[flagKey];
+
         },
         toggleFlagWithCloseSidebar: function(flagKey, evt) {
             document.querySelector('#navi-toggle + label').click();
