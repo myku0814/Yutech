@@ -595,6 +595,8 @@ body {
   justify-content: center;
   align-items: center;
   height: 63vh; }
+  .carousel--en {
+    height: 72vh; }
   .carousel__inner {
     position: relative;
     width: 100%;

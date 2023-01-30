@@ -3,6 +3,11 @@
     justify-content: center;
     align-items: center;
     height: 63vh;
+
+    &--en {
+        height: 72vh;
+    }
+
     &__inner {
         position: relative;
         width: 100%;
