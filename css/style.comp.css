@@ -87,7 +87,7 @@ body {
     border-radius: 35%; } }
 
 body {
-  font-family: "Playfair Display", "Microsoft JhengHei", sans-serif;
+  font-family: "Arial", "Microsoft JhengHei", sans-serif;
   font-weight: 400;
   /* font-size: 16px; */
   line-height: 1.7;
@@ -116,6 +116,27 @@ body {
         letter-spacing: 1rem;
         text-indent: 1rem;
         font-size: 5rem; } }
+  .heading-primary--main_en {
+    display: block;
+    font-size: 5rem;
+    font-weight: 700;
+    letter-spacing: 1rem;
+    text-indent: 3.5rem;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    /* 
+        animation-iteration-count: 3;
+        animation-delay: 3s; 
+        */ }
+    @media only screen and (max-width: 64em) {
+      .heading-primary--main_en {
+        font-size: 4rem;
+        letter-spacing: .5rem; } }
+    @media only screen and (max-width: 37.5em) {
+      .heading-primary--main_en {
+        letter-spacing: 0;
+        text-indent: 1rem; } }
   .heading-primary--sub {
     display: block;
     font-size: 2rem;
@@ -126,6 +147,17 @@ body {
     @media only screen and (max-width: 37.5em) {
       .heading-primary--sub {
         letter-spacing: .5rem;
+        text-indent: .5rem; } }
+  .heading-primary--sub_en {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    text-indent: 1rem;
+    animation: moveInRight 1s ease-out; }
+    @media only screen and (max-width: 37.5em) {
+      .heading-primary--sub_en {
+        font-size: 1rem;
         text-indent: .5rem; } }
 
 .heading-secondary {
@@ -150,7 +182,9 @@ body {
       font-size: 3rem; } }
   @media only screen and (max-width: 37.5em) {
     .heading-secondary {
-      font-size: 2.5rem; } }
+      font-size: 2.5rem; }
+      .heading-secondary--en {
+        font-size: 2rem; } }
 
 .heading-tertiary {
   font-size: 1.6rem;
@@ -560,7 +594,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 70vh; }
+  height: 63vh; }
   .carousel__inner {
     position: relative;
     width: 100%;
@@ -1003,7 +1037,7 @@ body {
     font-size: 1.4rem;
     color: #fff;
     text-decoration: none;
-    font-family: "Playfair Display", "Microsoft JhengHei", sans-serif;
+    font-family: "Arial", "Microsoft JhengHei", sans-serif;
     padding: 1.2rem;
     transition: all .2s;
     text-align: center;
@@ -1122,7 +1156,7 @@ body {
     display: inline-block;
     font-size: 1.8rem;
     font-weight: 700;
-    padding: 1rem 2rem;
+    padding: 1rem 1.5rem;
     color: #105761;
     text-decoration: none;
     background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #105761 50%);
@@ -1130,7 +1164,8 @@ body {
     transition: all .4s; }
     @media only screen and (max-width: 64em) {
       .navigation__link:link, .navigation__link:visited {
-        font-size: 1rem; } }
+        font-size: 1.5rem;
+        padding: 1rem 1.5rem; } }
   .navigation__link:hover, .navigation__link:active {
     background-position: 100%;
     color: #fff; }
@@ -1212,7 +1247,7 @@ body {
       margin: 1rem; }
     .navigation__link:link, .navigation__link:visited {
       display: inline-block;
-      font-size: 3rem;
+      font-size: 2.5rem;
       font-weight: 500;
       padding: 1rem 2rem;
       color: #fff;
@@ -1220,8 +1255,7 @@ body {
       text-transform: uppercase;
       background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #fff 50%);
       background-size: 250%;
-      transition: all .4s;
-      border-bottom: 2px solid #ccc; }
+      transition: all .4s; }
     .navigation__link:hover, .navigation__link:active {
       background-position: 100%;
       color: #4f816a;
@@ -1265,7 +1299,6 @@ body {
   position: relative;
   padding-top: 29vh;
   margin-top: -50vh;
-  padding-bottom: 3rem;
   z-index: 10;
   background-image: linear-gradient(to right, #accac5, #105761);
   min-height: 50vh; }
@@ -1336,19 +1369,20 @@ body {
       .contactUs__QRcodes {
         flex-direction: column; } }
   .contactUs__QRcode {
-    width: calc(min(20vw, 40vh));
+    width: 40vh;
     display: flex;
     justify-content: center;
     align-items: center; }
     @media only screen and (max-width: 37.5em) {
       .contactUs__QRcode {
-        width: 30vw; } }
+        width: 48vw; } }
     .contactUs__QRcode-box {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       padding: 2rem;
+      margin: 1rem;
       border-radius: 10px;
       background-image: linear-gradient(to right bottom, rgba(212, 175, 236, 0.1), rgba(48, 0, 80, 0.1)), url(../../img/favicon_cover.png);
       background-size: cover;
