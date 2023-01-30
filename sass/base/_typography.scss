@@ -22,11 +22,37 @@ body {
         animation-name: moveInLeft;
         animation-duration: 1s;
         animation-timing-function: ease-out;
-
+        
         @include respond("phone") {
             letter-spacing: 1rem;
             text-indent: 1rem;
             font-size: 5rem;
+        }
+
+        /* 
+        animation-iteration-count: 3;
+        animation-delay: 3s; 
+        */
+    }
+
+    &--main_en {
+        display: block;
+        font-size: 5rem;
+        font-weight: 700;
+        letter-spacing: 1rem;
+        text-indent: 3.5rem;
+        animation-name: moveInLeft;
+        animation-duration: 1s;
+        animation-timing-function: ease-out;
+
+        @include respond("laptop") {
+            font-size: 4rem;
+            letter-spacing: .5rem;
+        }
+
+        @include respond("phone") {
+            letter-spacing: 0;
+            text-indent: 1rem;
         }
 
         /* 
@@ -45,6 +71,20 @@ body {
 
         @include respond("phone") {
             letter-spacing: .5rem;
+            text-indent: .5rem;
+        }
+    }
+
+    &--sub_en {
+        display: block;
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 0;
+        text-indent: 1rem;
+        animation: moveInRight 1s ease-out;
+
+        @include respond("phone") {
+            font-size: 1rem;
             text-indent: .5rem;
         }
     }
@@ -79,6 +119,9 @@ body {
 
     @include respond("phone") {
         font-size: 2.5rem;
+        &--en {
+            font-size: 2rem;
+        }
     }
 }
 

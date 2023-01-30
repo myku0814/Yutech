@@ -19,14 +19,14 @@ Vue.createApp({
                 './img/gal/gal-14.webp'
             ],
             modals: [
-                { name: 'yuguard', src: './img/DM/yuguard_detail.webp', prodName: '貼心片' },
-                { name: 'yusound', src: './img/DM/yusound_detail.webp', prodName: '貼心音' },
-                { name: 'yurine', src: './img/DM/yurine_detail.webp', prodName: '尿檢譯' },
-                { name: 'yucloth', src: './img/DM/yucloth_detail.webp', prodName: '貼心衣' },
-                { name: 'yubelt', src: './img/DM/yubelt_detail.webp',  prodName: '貼心帶' },
-                { name: 'yupet', src: './img/DM/yupet_detail.webp', prodName: '寵心衣' },
-                { name: 'trianswer', src: './img/DM/trianswer_detail.webp', prodName: '試穿戴' },
-                { name: 'yucbm', src: './img/DM/yucbm_detail.webp', prodName: '檢備譯' }
+                { name: 'yuguard', src: (document.body.clientWidth <= 600)? './img/DM/yuguard_detail_v.webp' : './img/DM/yuguard_detail.webp', prodName: '貼心片' },
+                { name: 'yusound', src: (document.body.clientWidth <= 600)? './img/DM/yusound_detail_v.webp' : './img/DM/yusound_detail.webp', prodName: '貼心音' },
+                { name: 'yurine', src: (document.body.clientWidth <= 600)? './img/DM/yurine_detail_v.webp' : './img/DM/yurine_detail.webp', prodName: '尿檢譯' },
+                { name: 'yucloth', src: (document.body.clientWidth <= 600)? './img/DM/yucloth_detail_v.webp' : './img/DM/yucloth_detail.webp', prodName: '貼心衣' },
+                { name: 'yubelt', src: (document.body.clientWidth <= 600)? './img/DM/yubelt_detail_v.webp' : './img/DM/yubelt_detail.webp',  prodName: '貼心帶' },
+                { name: 'yupet', src: (document.body.clientWidth <= 600)? './img/DM/yupet_detail_v.webp' : './img/DM/yupet_detail.webp', prodName: '寵心衣' },
+                { name: 'trianswer', src: (document.body.clientWidth <= 600)? './img/DM/trianswer_detail_v.webp' : './img/DM/trianswer_detail.webp', prodName: '試穿戴' },
+                { name: 'yucbm', src: (document.body.clientWidth <= 600)? './img/DM/yucbm_detail_v.webp' : './img/DM/yucbm_detail.webp', prodName: '檢備譯' }
             ],
             cards: [
                 [

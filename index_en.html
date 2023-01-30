@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        
+        <meta name=”description” content=”裕晶醫學科技是一間提供具心血管疾病檢測、分析與評估之穿戴式產品的公司” />
+        <link rel="canonical" href="https://www.yutechealth.com/" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900&family=Roboto:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+        
+        <link rel="preload" as="image" href="./img/prod_preview/yuguard.webp" />
+        <link rel="preload" as="image" href="./img/prod_preview/yusound.webp" />
+        <link rel="preload" as="image" href="./img/prod_preview/yurine.webp" />
+        <link rel="preload" as="image" href="./img/prod_preview/yucloth.webp" />
+        <link rel="preload" as="image" href="./img/prod_preview/yubelt.webp" />
+        <link rel="preload" as="image" href="./img/prod_preview/yupet.webp" />
+        <link rel="preload" as="image" href="./img/prod_preview/trianswer.webp" />
+        <link rel="preload" as="image" href="./img/prod_preview/yucbm.webp" />
+
+        <title>Yutech | 裕晶醫學科技</title>
+    </head>
+    <body>
+
+        <div id="app" v-cloak>
+            <div class="navigation">
+                <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+                <label for="navi-toggle" class="navigation__button">
+                    <span class="navigation__icon">&nbsp;</span>
+                </label>
+                <div class="navigation__background">&nbsp;</div>
+                
+                <nav class="navigation__nav">
+                    <a href="/">
+                        <div class="navigation__logo-box">
+                            <img src="img/logo.jpg" alt="Logo" class="navigation__logo">
+                        </div>
+                    </a>
+                    <ul class="navigation__list">
+                        <li 
+                            class="navigation__item"
+                            v-for="(el, idx) in modals" 
+                            :key="idx" 
+                        >
+                            <a 
+                                class="navigation__link" 
+                                :href="`#popup-${el.name}`" 
+                                @click.prevent="toggleFlagWithCloseSidebar(el.name, $event)"
+                            >{{ el.prodName }}</a>
+                        </li>
+                        <li class="navigation__item">
+                            <a 
+                                class="navigation__link" 
+                                href="./contactUs_en.html"
+                            >Contact Us</a>
+                        </li>
+                        <li class="navigation__item">
+                            <a 
+                                class="navigation__link" 
+                                href="./index.html"
+                                style="color: rgb(208, 171, 70);"
+                            >Chinese</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+    
+            <header class="header">
+                <!-- 品牌宣言 -->
+                <div class="header__text-box">
+                    <h1 class="heading-primary">
+                        <span class="heading-primary--main_en" style="margin-bottom: 1rem;">Personal Guardian of Your Health</span>
+                        <span class="heading-primary--sub_en">Wearable products for cardiovascular disease detection, analysis and evaluation</span>
+                    </h1>
+                    <a href="#section-features" class="btn btn--blue">Learn more</a>
+                </div>
+            </header>
+
+            <main>
+                <section id="section-about" class="section-about">
+                    <ul class="bubbles">
+                        <li v-for="idx in 10" :key="idx"></li>
+                    </ul>
+                    <!-- 7樣產品 -->
+                    <div class= "u-center-text u-margin-bottom-big">
+                        <h2 class="heading-secondary heading-secondary--light heading-secondary--en"
+                        >Biomedical <span class="typed-text">
+                                {{ mainText }}
+                            </span>
+                            <span class="cursor" :class="{ typing: mainTextTypeStatus }">&nbsp;</span>
+                        </h2>
+                    </div>
+                    
+                    <div class="cards">
+                        <template v-for="(row, row_idx) in cards">
+                            <div class="flex-box">
+                                <div 
+                                    class="card"
+                                    v-for="(el, idx) in row" 
+                                    :key="`card-${row_idx}-${idx}`"
+                                >
+                                    <div class="card__img-box">
+                                        <img 
+                                            class="card__img"
+                                            :src="el.src" 
+                                            :alt="el.name"
+                                        >
+                                    </div>
+                                    <h4 class="card__heading">
+                                        <span :class="`card__heading-span card__heading-span--${el.catagory}`">{{ el.prodName }}</span>
+                                    </h4>
+                                    <div class="card__details">
+                                        <span 
+                                            class="card__details__span"
+                                            :class="getCardSpanClass(el.catagory)"
+                                        >{{ el.prodName }}</span>
+                                        {{ el.msg }}
+                                    </div>
+                                    <div class="card__btn">
+                                        <a 
+                                            class="btn btn--blue u-margin-bottom-small"
+                                            :href="`#popup-${el.name}`"  
+                                            @click.prevent="toggleFlag(el.name, $event)"
+                                        >Learn more</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+
+                    <div class="carousels">
+                        <div class="carousel">
+                            <div class="carousel__inner">
+                                <div class="carousel__indicators">
+                                    <button 
+                                        class="carousel__control carousel__control--left" 
+                                        @click.prevent="slidePrev()"
+                                    >Prev</button>
+                                    <button 
+                                        class="carousel__indicator-item" 
+                                        v-for="(el, idx) in slides.length" 
+                                        :key="idx" 
+                                        :class="{ carousel__indicator_active: currentSlide === idx }"
+                                        @click.prevent="slideSwitch(idx)"
+                                    ></button>
+                                    <button 
+                                        class="carousel__control carousel__control--right" 
+                                        @click.prevent="slideNext()"
+                                    >Next</button> 
+                                </div>
+                                <template v-for="(el, idx) in slides">
+                                    <transition :name="`slide-${slideDirection}`">
+                                        <div 
+                                            class="carousel__item" 
+                                            :key="idx" 
+                                            v-show="currentSlide === idx" 
+                                            @mouseenter="stopSlideTimer()" 
+                                            @mouseout="startSlideTimer()"
+                                        >
+                                            <div 
+                                                class="card"
+                                                @touchstart="slideTouchStart($event)"
+                                                @touchend="slideTouchEnd($event)"
+                                            >
+                                                <div class="card__img-box">
+                                                    <img 
+                                                        class="card__img"
+                                                        :src="el.src" 
+                                                        :alt="el.name"
+                                                    >
+                                                </div>
+                                                <h4 class="card__heading">
+                                                    <span :class="`card__heading-span card__heading-span--${el.catagory}`">{{ el.prodName }}</span>
+                                                </h4>
+                                                <div class="card__details">
+                                                    <span 
+                                                        class="card__details__span"
+                                                        :class="getCardSpanClass(el.catagory)"
+                                                    >{{ el.prodName }}</span>
+                                                    {{ el.msg }}
+                                                </div>
+                                                <div class="card__btn">
+                                                    <a 
+                                                        class="btn btn--blue u-margin-bottom-small"
+                                                        :href="`#popup-${el.name}`"  
+                                                        @click.prevent="toggleFlag(el.name, $event)"
+                                                    >Learn more</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </transition>
+                                </template>       
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="section-features" class="section-features">
+                    <!-- 公司特色 -->
+                    <div class= "u-center-text u-margin-bottom-medium u-padding-top-medium">
+                        <h2 class="heading-secondary heading-secondary--dark heading-secondary--en">Lightweight<br>Convenient<br>Professional</h2>
+                    </div>
+                    <div 
+                        class="feature-box"
+                        v-for="(el, idx) in features"
+                        :key="idx"
+                    >
+                        <div class="feature-box__img-box">
+                            <img 
+                                class="feature-box__img"
+                                :src="el.src" 
+                                :alt="el.name"
+                            >
+                        </div>
+                        <div class="feature-box__word-box">
+                            <div class="feature-box__label">
+                                <svg class="feature-box__icon">
+                                    <use :xlink:href="`img/sprite.svg#${el.icon}`"></use>
+                                </svg>
+                                <div class="feature-box__title">
+                                    <h3 class="heading-tertiary">{{ el.title }}</h3>
+                                </div>
+                            </div>
+                            <div class="feature-box__text">
+                                {{ el.msg }}
+                            </div>
+                        </div>
+                    </div>                
+                </section>
+                <section class="section-stories">
+                    <!-- 公司故事 -->
+                    <svg class="stories__triangle">
+                        <use xlink:href="img/sprite.svg#icon-triangle-down"></use>
+                    </svg>
+                    <div class="stories__box">
+                        <div class="stories__img-box">
+                            <img src="./img/member.webp" alt="member" class="stories__img">
+                        </div>
+                        <div class="stories__details">
+                            <span>Your Health Technology (Yutech)</span> was founded in 2019 from the <span>CBIC - Communication and Biointegrated Circuit Design Laboratory of National Ching Kung University</span>. We are committed to the development of <span>biomedical system chips</span>, <span>biomedical wearable devices</span> and <span>mobile cloud platforms</span>, with the core goal of improving the quality of human health, therefore, Your Health Technology has launched the "Guard Patch" series of products to gradually promote the goal of improving the quality of human health through medical technology to daily wearable monitoring and popularization to the education and promotion market. And from a specific area to the general public to enhance the well-being of human society.
+                            Your Health Technology also has the <span>system hardware design</span>, <span>software and firmware development technology</span>, <span>Internet of Things system integration</span>, <span>Al artificial intelligence</span> and <span>system and chip integration design</span>, etc., and has obtained more than 40 patents on both sides of the Taiwan Strait and in the United States. We can provide a wide range of services such as customized system design and sales of biomedical wearable system modules.
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <!-- 活動照片 -->
+                    <div class="gallery">
+                        <figure 
+                            v-for="(el, idx) in galleryPictures" 
+                            :class="`gallery__item gallery__item--${idx+1}`"
+                            :key="`Gallery image ${idx+1}`"
+                        >
+                            <img 
+                                :src="el" 
+                                :alt="`Gallery image ${idx+1}`" 
+                                class="gallery__img"
+                            >
+                        </figure>
+                    </div>
+                </section>
+            </main>
+    
+            <footer class="footer">
+                <div class="navs">
+                    <ul class="nav">
+                        <li class="nav__item"><a @click.prevent="copyText('Your Health Technology Co., Ltd.')" href="#" class="nav__link">Your Health Technology Co., Ltd.</a></li>
+                        <li class="nav__item"><a @click.prevent="copyText('Room 4, 7F, No. 153, Sec. 2, Minzu Rd. West Central Dist, Tainan City 700')" href="#" class="nav__link">Room 4, 7F, No. 153, Sec. 2, Minzu Rd. <br>West Central Dist, Tainan City 700</a></li>
+                    </ul>
+                    <ul class="nav">
+                        <li class="nav__item"><a @click.prevent="copyText('service@yutechealth.com')" href="#" class="nav__link">Email<br>service@yutechealth.com</a></li>
+                        <li class="nav__item"><a @click.prevent="copyText('(06)221-6189')" href="#" class="nav__link">Phone<br>(06)221-6189</a></li>
+                    </ul>
+                    <ul class="nav nav__icons">
+                        <li 
+                            class="nav__item"
+                            v-for="(el, idx) in waterBtns"  
+                            :key="idx"
+                        >
+                            <a target="_blank" :href="el.href" class="nav__link">
+                                <svg class="nav__icon">
+                                    <use :xlink:href="`img/sprite.svg#${el.icon}`"></use>
+                                </svg>
+                            </a>
+                            <span class="nav__text">{{ el.name }}</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="copyright">
+                    <div class="copyright__logo-box">
+                        <img src="img/logo_white.png" alt="Logo" class="copyright__logo">
+                    </div>
+                    <div class="copyright__text">
+                        &copy; Copyright 2023 Yutech Corp. by myku. All right reserved.
+                    </div>
+                </div>
+            </footer>
+    
+    
+         
+             
+            <div 
+                class="popup"
+                v-for="(el, idx) in modals"  
+                :id="`popup-${el.name}`" 
+                :key="`popup-${el.name}`" 
+                :class="{ popup__target: showModals[el.name] }"
+            >
+                <div class="popup__bg" @click.prevent="toggleFlag(el.name, $event)"></div>
+                <a href="#" class="popup__close" @click.prevent="toggleFlag(el.name, $event)">&times;</a>
+                <div class="popup__content" :class="{ popup__target__content: showModals[el.name] }">
+                    <div class="popup_img-box">
+                        <img 
+                            class="popup__img"
+                            :src="el.src" 
+                            :alt="el.name" 
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- include-svg -->
+        <div class="include-svg">
+            <svg width="0" height="0">
+                <defs>
+                    <clipPath id="waveClip__two-way" clipPathUnits="objectBoundingBox">
+                    <path d="m 0 0.12 q 0 -0.04 0.5 -0.04 q 0.5 0 0.5 -0.08 l 0 1 l -1 0 l 0 -0.88"/>
+                    </clipPath>
+                </defs>
+            </svg>
+            <svg width="0" height="0">
+                <defs>
+                    <clipPath id="waveClip__one-way" clipPathUnits="objectBoundingBox">
+                    <path d="m 0 0.04 q 0 -0.04 0.5 -0.04 q 0.5 0 0.5 0 l 0 1 l -1 0 l 0 -0.96"/>
+                    </clipPath>
+                </defs>
+            </svg>
+        </div>
+        
+        
+
+
+
+
+        <script type="text/javascript" src="node_modules/default-passive-events/dist/index.js"></script>
+        <script src="https://unpkg.com/vue@next"></script>
+        <script src="./js/main_en.js"></script>
+    </body>
+</html>

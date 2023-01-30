@@ -35,9 +35,9 @@
         }
     }
     &__QRcode {
-        width: calc(min(20vw, 40vh));
+        width: 40vh;
         @include respond("phone") {
-            width: 30vw;
+            width: 48vw;
         }
         display: flex;
         justify-content: center;
@@ -51,6 +51,7 @@
             justify-content: center;
             align-items: center;
             padding: 2rem;
+            margin: 1rem;
             border-radius: 10px;
             background-image: 
                 linear-gradient(

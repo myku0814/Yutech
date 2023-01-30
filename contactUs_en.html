@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        
+        <meta name=”description” content=”裕晶醫學科技是一間提供具心血管疾病檢測、分析與評估之穿戴式產品的公司” />
+        <link rel="canonical" href="https://www.yutechealth.com/" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900&family=Roboto:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+        
+        <title>Yutech | 裕晶醫學科技-聯絡我們</title>
+
+
+        
+    </head>
+    <body>
+
+        <div id="app" v-cloak style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div class="navigation">
+                <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+                <label for="navi-toggle" class="navigation__button">
+                    <span class="navigation__icon">&nbsp;</span>
+                </label>
+                <div class="navigation__background">&nbsp;</div>
+                
+                <nav class="navigation__nav">
+                    <a href="/">
+                        <div class="navigation__logo-box">
+                            <img src="img/logo.jpg" alt="Logo" class="navigation__logo">
+                        </div>
+                    </a>
+                    <ul class="navigation__list">
+                        <li 
+                            class="navigation__item"
+                            v-for="(el, idx) in modals" 
+                            :key="idx" 
+                        >
+                            <a 
+                                class="navigation__link" 
+                                :href="`#popup-${el.name}`" 
+                                @click.prevent="toggleFlagWithCloseSidebar(el.name, $event)"
+                            >{{ el.prodName }}</a>
+                        </li>
+                        <li class="navigation__item">
+                            <a 
+                                class="navigation__link" 
+                                href="./index_en.html"
+                            >Home</a>
+                        </li>
+                        <li class="navigation__item">
+                            <a 
+                                class="navigation__link" 
+                                href="./contactUs.html"
+                                style="color: rgb(208, 171, 70);"
+                            >Chinese</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            
+            <section class="land">
+                <ul class="bubbles">
+                    <li v-for="idx in 10" :key="idx"></li>
+                </ul>
+                <div class= "u-center-text u-margin-bottom-medium contactUs__title">
+                    <h2 class="heading-secondary heading-secondary--dark">Contact Us</h2>
+                </div>
+                <div class="contactUs__QRcodes u-margin-bottom-small">
+                    <div class="contactUs__QRcode-box">
+                        <span class="contactUs__QRcode-text">Line QR code</span>
+                        <div class="contactUs__QRcode-imgBox">
+                            <img src="img/QRCode/detail_QRCode/QR_line_M.png" alt="QR_line" class="contactUs__QRcode">
+                        </div>
+                    </div>
+                    <div class="contactUs__QRcode-box">
+                        <span class="contactUs__QRcode-text">eBay QR code</span>
+                        <div class="contactUs__QRcode-imgBox">
+                            <img src="img/QRCode/detail_QRCode/QR_eBay.png" alt="QR_eBay" class="contactUs__QRcode">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <main class="contactUs">
+                <div 
+                    class="collapsible"
+                    v-for="(el, i) in contacts"
+                    :key="i"
+                >
+                    <button class="collapsible__btn" @click.prevent="toggleCollapsible($event)" :id="`${el.label}_btn`">{{ el.title }}</button>
+                    <div class="collapsible__content">
+                        <div class="book">
+                            <div class="book__form">
+                                <form action="#" class="form" :id="`${el.label}_form`">
+                                    <div class="form__group" v-if="el.label !== 'contact3'">
+                                        <div 
+                                            class="form__radio-group" 
+                                            v-for="(ele, idx) in radios"
+                                            :key="idx" 
+                                        >
+                                            <input type="radio" class="form__radio-input" :id="`${el.label}_${ele.name}`" :value="ele.name" name="prodSelect">
+                                            <label :for="`${el.label}_${ele.name}`" class="form__radio-label">
+                                                <span class="form__radio-button"></span>
+                                                {{ ele.prodName }}
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form__group" v-if="el.label === 'contact2'">
+                                        <input type="text" class="form__input" placeholder="Pieces" :id="`${el.label}_piece`" required name="piece">
+                                        <label :for="`${el.label}_piece`" class="form__label">&uarr;Pieces</label>
+                                    </div>
+                                    <div class="form__group">
+                                        <input type="text" class="form__input" placeholder="Name" :id="`${el.label}_name`" required name="name">
+                                        <label :for="`${el.label}_name`" class="form__label">&uarr;Name</label>
+                                    </div>
+                                    <div class="form__group">
+                                        <input type="email" class="form__input" placeholder="Email" :id="`${el.label}_email`" required name="email">
+                                        <label :for="`${el.label}_email`" class="form__label">&uarr;Email</label>
+                                    </div>
+                                    <div class="form__group">
+                                        <input type="text" class="form__input" placeholder="Phone" :id="`${el.label}_phone`" required name="phone">
+                                        <label :for="`${el.label}_phone`" class="form__label">&uarr;Phone</label>
+                                    </div>
+                                    <div class="form__group">
+                                        <textarea class="form__textarea" minlength="1" placeholder="Message" :id="`${el.label}_message`" name="message"></textarea>
+                                    </div>
+                                    <div class="form__group u-margin-top-mini">
+                                        <button class="btn btn--blue" @click.prevent="sendContactUsEmail(el)">Send</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            
+            <footer class="footer">
+                <div class="navs">
+                    <ul class="nav">
+                        <li class="nav__item"><a @click.prevent="copyText('Your Health Technology Co., Ltd.')" href="#" class="nav__link">Your Health Technology Co., Ltd.</a></li>
+                        <li class="nav__item"><a @click.prevent="copyText('Room 4, 7F, No. 153, Sec. 2, Minzu Rd. West Central Dist, Tainan City 700')" href="#" class="nav__link">Room 4, 7F, No. 153, Sec. 2, Minzu Rd. <br>West Central Dist, Tainan City 700</a></li>
+                    </ul>
+                    <ul class="nav">
+                        <li class="nav__item"><a @click.prevent="copyText('service@yutechealth.com')" href="#" class="nav__link">Email<br>service@yutechealth.com</a></li>
+                        <li class="nav__item"><a @click.prevent="copyText('(06)221-6189')" href="#" class="nav__link">Phone<br>(06)221-6189</a></li>
+                    </ul>
+                    <ul class="nav nav__icons">
+                        <li 
+                            class="nav__item"
+                            v-for="(el, idx) in waterBtns"  
+                            :key="idx"
+                        >
+                            <a target="_blank" :href="el.href" class="nav__link">
+                                <svg class="nav__icon">
+                                    <use :xlink:href="`img/sprite.svg#${el.icon}`"></use>
+                                </svg>
+                            </a>
+                            <span class="nav__text">{{ el.name }}</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="copyright">
+                    <div class="copyright__logo-box">
+                        <img src="img/logo_white.png" alt="Logo" class="copyright__logo">
+                    </div>
+                    <div class="copyright__text">
+                        &copy; Copyright 2023 Yutech Corp. by myku. All right reserved.
+                    </div>
+                </div>
+            </footer>
+    
+    
+         
+             
+            <div 
+                class="popup"
+                v-for="(el, idx) in modals"  
+                :id="`popup-${el.name}`" 
+                :key="`popup-${el.name}`" 
+                :class="{ popup__target: showModals[el.name] }"
+            >
+                <div class="popup__bg" @click.prevent="toggleFlag(el.name, $event)"></div>
+                <a href="#" class="popup__close" @click.prevent="toggleFlag(el.name, $event)">&times;</a>
+                <div class="popup__content" :class="{ popup__target__content: showModals[el.name] }">
+                    <div class="popup_img-box">
+                        <img 
+                            class="popup__img"
+                            :src="el.src" 
+                            :alt="el.name" 
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script type="text/javascript" src="node_modules/default-passive-events/dist/index.js"></script>
+        <script src="https://unpkg.com/vue@next"></script>
+        <script src="./js/main_en.js"></script>
+    </body>
+</html>

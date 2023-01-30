@@ -34,10 +34,11 @@
             display: inline-block;
             font-size: 1.8rem;
             @include respond("laptop") {
-                font-size: 1rem;
+                font-size: 1.5rem;
+                padding: 1rem 1.5rem;
             }
             font-weight: 700;
-            padding: 1rem 2rem;
+            padding: 1rem 1.5rem;
             color: $color-primary-dark;
             text-decoration: none;
             background-image: linear-gradient(120deg, transparent 0%, transparent 50%, $color-primary-dark 50%);
@@ -150,7 +151,7 @@
             &:link,
             &:visited {
                 display: inline-block;
-                font-size: 3rem;
+                font-size: 2.5rem;
                 font-weight: 500;
                 padding: 1rem 2rem;
                 color: $color-white;
@@ -159,7 +160,6 @@
                 background-image: linear-gradient(120deg, transparent 0%, transparent 50%, $color-white 50%);
                 background-size: 250%;
                 transition: all .4s;
-                border-bottom: 2px solid $color-grey-light-3;
             }
             
             &:hover,
